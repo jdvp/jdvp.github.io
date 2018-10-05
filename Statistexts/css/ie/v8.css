@@ -1,4 +1,4 @@
-/*
+﻿/*
 	Tessellate by HTML5 UP
 	html5up.net | @n33co
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
@@ -132,12 +132,12 @@
 
 	#header
 	{
-		background-image:			url('../../images/header.jpg');
-		background-size:			cover;
-		background-position:		auto;
-		background-repeat:			no-repeat;
-		-ms-behavior: url('css/ie/backgroundsize.min.htc');
-	}
+	background-image: url('../../images/header.png');
+	background-size: cover;
+	background-position: auto;
+	background-repeat: no-repeat;
+	-ms-behavior: url('css/ie/backgroundsize.min.htc');
+}
 
 /*********************************************************************************/
 /* Main Sections                                                                 */
