@@ -1,0 +1,40 @@
+[
+  {
+    "title": "Schedule a notification",
+    "pageList": [
+      {
+        "message": "On the main screen, select an app for which you would like to schedule a notification",
+        "imageUrl": "img/schedule/0.png"
+      },
+      {
+        "message": "Fill out any details about the notification including message content and time. Click \"Fire Notification\" when you are done.",
+        "imageUrl": "img/schedule/1.png"
+      },
+      {
+        "message": "When the scheduled time comes, you will recieve the notification.",
+        "imageUrl": "img/schedule/2.png"
+      },
+      {
+        "message": "Tapping the notification will open the app you had previously selected.",
+        "imageUrl": "img/schedule/3.png"
+      }
+    ]
+  },
+  {
+    "title": "Edit an existing scheduled notification",
+    "pageList": [
+      {
+        "message": "On the home screen, tap the menu button. This is located in the bottom right corner of the screen and has a plus symbol on it.",
+        "imageUrl": "img/edit/0.png"
+      },
+      {
+        "message": "When a notification has been scheduled, the \"Upcoming Notifications\" option will appear. Tap this option.",
+        "imageUrl": "img/edit/1.png"
+      },
+      {
+        "message": "You will be directed to the notification scheduling page with the existing info pre-populated. Make any changes you want and click \"Reschedule Notification\" to overwrite the existing notification.",
+        "imageUrl": "img/edit/2.png"
+      }
+    ]
+  }
+]
