@@ -32,8 +32,12 @@
         "imageUrl": "img/edit/1.png"
       },
       {
-        "message": "You will be directed to the notification scheduling page with the existing info pre-populated. Make any changes you want and click \"Reschedule Notification\" to overwrite the existing notification.",
+        "message": "You will be directed to the scheduled notifications page. Pick an item you want to change and tap \"Edit\"",
         "imageUrl": "img/edit/2.png"
+      },
+      {
+        "message": "You will be directed to the notification scheduling page with the existing info pre-populated. Make any changes you want and click \"Reschedule Notification\" to overwrite the existing notification.",
+        "imageUrl": "img/edit/3.png"
       }
     ]
   }
