@@ -42,23 +42,69 @@
     ]
   },
   {
+    "title": "Create notification from Share action",
+    "pageList": [
+      {
+        "message": "Notifications can be scheduled using content shared from other applications.",
+        "imageUrl": "img/share/0.png"
+      },
+      {
+        "message": "In another app, find something you would like to share and click the share action within that application.",
+        "imageUrl": "img/share/1.png"
+      },
+      {
+        "message": "when the share sheet pops up from the bottom, select \"Notification Launcher\".",
+        "imageUrl": "img/share/2.png"
+      },
+      {
+        "message": "Change any details you would like, such as timing, on the details page, then click \"Fire Notification\".",
+        "imageUrl": "img/share/3.png"
+      },
+      {
+        "message": "when the time comes, you will get the desired notification. If the notification contains a URL, the app will parse it and take you to the corresponding app.",
+        "imageUrl": "img/share/4.png"
+      },
+      {
+        "message": " For instance, items shared from the Play Store will open the Play Store app directly to the shared content when the notification is clicked.",
+        "imageUrl": "img/share/5.png"
+      }
+    ]
+  },
+  {
     "title": "Create a Quick Notification",
     "pageList": [
       {
-        "message": "When scheduling a \"relative\" notification, you'll see an option to \"Create a quick notification option\". Checking this will create a Quick Notication when you schedule the notification.",
-        "imageUrl": "img/qn/0.png"
+        "message": "When scheduling a \"relative\" notification, you'll see an checkbox to \"Create a quick notification option\". Checking this will create a Quick Notication when you schedule the notification.",
+        "imageUrl": "img/qn/add/0.png"
       },
       {
         "message": "Quick notifications will be shown on the main screen in a collapsable header. Clicking a quick notification will schedule a copy of the original notification that you had created.",
-        "imageUrl": "img/qn/1.png"
+        "imageUrl": "img/qn/add/1.png"
       },
       {
         "message": "On Android 7.1 and above, Quick Notifications will also be shown in the list of app shortcuts. Note that only the 3 most-recent Quick Notifications will show up in the list.",
-        "imageUrl": "img/qn/2.png"
+        "imageUrl": "img/qn/add/2.png"
       },
       {
         "message": "App shortcuts can also be pinned. If pinned, you can delete the Quick Notification in the app without deleting the pinned item.",
-        "imageUrl": "img/qn/3.png"
+        "imageUrl": "img/qn/add/3.png"
+      }
+    ]
+  },
+  {
+    "title": "Deleting Quick Notifications",
+    "pageList": [
+      {
+        "message": "If you have created a Quick Notifications, you will see them on the app list screen under the collapsable Quick Notifications section.",
+        "imageUrl": "img/qn/delete/0.png"
+      },
+      {
+        "message": "Long pressing the Quick Notification that you want to delete will remove it. A message at the bottom of the screen will allow you to do undo the action for a few seconds if it was a mistake",
+        "imageUrl": "img/qn/delete/1.png"
+      },
+      {
+        "message": "For Android 7.1 and above, any pinned quick notification (such as the one shown in the image) will not be deleted automatically since they are handled by the operating system and have to be deleted manually.",
+        "imageUrl": "img/qn/delete/2.png"
       }
     ]
   }
