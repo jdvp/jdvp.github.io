@@ -40,5 +40,26 @@
         "imageUrl": "img/edit/3.png"
       }
     ]
+  },
+  {
+    "title": "Create a Quick Notification",
+    "pageList": [
+      {
+        "message": "When scheduling a \"relative\" notification, you'll see an option to \"Create a quick notification option\". Checking this will create a Quick Notication when you schedule the notification.",
+        "imageUrl": "img/qn/0.png"
+      },
+      {
+        "message": "Quick notifications will be shown on the main screen in a collapsable header. Clicking a quick notification will schedule a copy of the original notification that you had created.",
+        "imageUrl": "img/qn/1.png"
+      },
+      {
+        "message": "On Android 7.1 and above, Quick Notifications will also be shown in the list of app shortcuts. Note that only the 3 most-recent Quick Notifications will show up in the list.",
+        "imageUrl": "img/qn/2.png"
+      },
+      {
+        "message": "App shortcuts can also be pinned. If pinned, you can delete the Quick Notification in the app without deleting the pinned item.",
+        "imageUrl": "img/qn/3.png"
+      }
+    ]
   }
 ]
