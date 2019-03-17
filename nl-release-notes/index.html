@@ -36,13 +36,14 @@
                         <section class="last">
                             <h2>Notification Launcher Release Notes</h2>
                             <p>Release notes for the Notification Launcher app found on Google Play : <a href="https://play.google.com/store/apps/details?id=me.jdvp.notificationlauncher" target="_blank">Notification Launcher</a></p>
-                                <b>2.2.0</b>
+                                <b>2.2.0 & 2.2.1</b>
                                 <br>March 16, 2019 
                                 <li>Adds the ability to group notifications by app in the "Past" and "Scheduled" notifications pages</li>
                                 <li>Adds the ability to create notifications using the "second" time unit</li>
                                 <li>Fixes an issue with recurring notifications and increases alarm accuracy. Specifically, repeating notifications did not seem to be accurate enough when using seconds. Accordingly, I've removed usages of AlarmManager's setRepeating method since it is known to be inexact. The documentation can be found <a href ="https://developer.android.com/reference/android/app/AlarmManager.html#setRepeating(int,%20long,%20long,%20android.app.PendingIntent)" target="_blank">here</a>. I'm now using setExact which will trigger on time but causes more battery usage potentially</li>
                                 <li>Adds more support for devices in landscape mode</li>
                                 <li>Adds a few animations (mostly for caret rotation)</li>
+                                <li>2.2.1 hotfix specifically fix app grouping which seemingly wasn't working on a few devices</li>
                                 <br>
                                 <br>
                                 <b>2.1.2</b>
