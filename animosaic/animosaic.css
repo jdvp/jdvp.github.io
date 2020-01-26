@@ -1,0 +1,213 @@
+*{
+    -webkit-user-select:none;
+    -khtml-user-select:none;
+    -moz-user-select:-moz-none;
+    -o-user-select:none;
+    user-select:none
+}
+ #slider-horizontal{
+    width:50vw;
+    min-width:400px;
+}
+
+html {
+	height: 100%;
+    background:#000;
+    overflow: hidden;
+}
+.animosaic-content {
+	height: 100%;
+    background:#03a9f4;
+    overflow: hidden;
+}
+
+.mosaic-tile{
+    width:100%;
+    height:100%
+}
+
+#imageItem{
+    visibility: hidden
+}
+
+.animosaic-mosaic-controls {
+	margin-top: 3vh;
+	margin-bottom: 3vh;
+	margin-left: 3vw;
+	margin-right: 3vw;
+
+
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    overflow: hidden;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.animosaic-prompt {
+    background:#FFF;
+    border-radius: 20px;
+    width:auto;
+    height:auto;
+    max-width: 90%;
+    max-height: 80%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    overflow: hidden;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+	min-width: 450px;
+}
+
+.bottom-control {
+    width:94vw;
+    position: absolute;
+    top: 88vh;
+    left: 0%;
+    margin-left :3vw;
+    margin-right:3vw;
+    display:none;
+}
+
+.animosaic-form {
+    align-items:left;
+    width: 50%;
+	min-width: 400px;
+	margin: 25px;
+}
+
+.control-row {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.control-row p {
+	color:#ffffff;
+	text-align:center;
+	margin: 0px;
+}
+
+.animosaic-footer p, a, a:link, a:visited, a:hover, a:active {
+	color:#ffffff;
+	text-align:center;
+	margin: 0px;
+    font-size: 12px;
+}
+
+.animosaic-form p, h2, h4 {
+    text-align: center
+}
+
+.animosaic-header, .animosaic-footer {
+	background-color:#007ac1;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    max-height: 5vh;
+}
+
+
+.rowholder {
+	min-width: 450px;
+}
+
+.animosaic-footer {
+    position: absolute;
+    bottom: 0%;
+    left: 0%;
+}
+
+h1, h4, p {
+	font-family:Arial;
+}
+
+.magnifier-hints {
+    font-size:17px;
+    font-weight: bold;
+}
+
+.animosaic-header h1 {
+	color:#ffffff;
+}
+
+.animosaic-form input {
+    width: 100%;
+	font-size:15px;
+    margin-bottom: 20px;
+	padding:9px 23px;
+	font-family:Arial;
+	border-radius:3px;
+	border:1px solid #03a9f4;
+	min-width: 350px;
+	text-align:center;
+}
+
+.animosaic-form-file-input {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+	cursor: pointer;
+}
+
+.animosaic-form-file-input + label {
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.animosaic-prompt-image {
+    width: 100%;
+	max-width: 400px;
+	margin: 25px;
+}
+
+.animosaic-prompt-image img {
+    border-radius: 10px;
+    max-width: 100%;
+}
+
+.animosaic-button,
+.animosaic-form-file-input + label {
+    width: 100%;
+	background-color:#03a9f4;
+	border-radius:3px;
+	border:1px solid #0688fa;
+	display:inline-block;
+    text-align: center;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	padding:9px 23px;
+	text-decoration:none;
+	min-width: 250px;
+}
+.animosaic-button:hover, .animosaic-form-file-input + label:hover {
+	background-color:#0688fa;
+}
+.animosaic-button:active, .animosaic-form-file-input + label:active{
+	position:relative;
+	top:1px;
+}
+

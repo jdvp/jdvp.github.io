@@ -1,0 +1,86 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Animosaic</title>
+        <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+        <link rel="icon" href="./favicon.ico" type="image/x-icon">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="animosaic.css">
+        <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.css"/>
+        <script src=https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js></script>
+        <script src=https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js></script>
+        <script src="animosaic-simple.js"></script>
+        <script src="kotlin.js"></script>
+        <script src="kotlinx-coroutines-core.js"></script>
+        <script src="kotlinx-serialization-kotlinx-serialization-runtime.js"></script>
+        <script src="animosaic.js"></script>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-65831716-6"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'UA-65831716-6');
+        </script>
+
+    </head>
+    <body>
+        <div class="animosaic-content">
+            <div class="animosaic-header">
+                <h1>Animosaic</h1>
+            </div>
+            <div class="animosaic-prompt">
+                <div class="animosaic-prompt-image">
+                    <img src="mascot.png">
+                </div>
+                <div class="animosaic-form">
+                    <div class="animosaic-form-text">
+                        <h4>Create an Animosaic</h4>
+                        <p>
+                            Create a mosaic consisting of anime you have watched! To get started, enter a MyAnimeList
+                            account and an image for which you want to create an Animosaic!
+                        </p>
+                        <p>
+                            The image processing is done in your browser and never uploaded to any servers. Make sure
+                            the anime list you are checking has a lot of anime for the best results!
+                        </p>
+                    </div>
+                    <form class="animosaic-form-form" onsubmit="animosaic.createMosaic(); $('.animosaic-prompt').hide(); return false" autocomplete="off">
+                        <input type="text" id="usernameInput" placeholder="MyAnimeList Username" required/>
+                        <br>
+                        <input class="animosaic-form-file-input" type="file" id="imageInput" accept="image/*" required>
+                        <label for="imageInput">Choose an image</label>
+                        <br>
+                        <button class="animosaic-button" type="submit">Create Mosaic</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="animosaic-mosaic-controls">
+                <div class="rowholder " ondragstart=return!1 ondrop=return!1 style="max-height: 75vh; overflow-x: auto; overflow-y: auto;"></div>
+                <div class="bottom-control">
+                    <div class="control-row">
+                        <p>Magnification</p>
+                    </div>
+                    <div class="control-row">
+                        <p class="magnifier-hints">-&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                        <div id="slider-horizontal"></div>
+                        <p class="magnifier-hints">&nbsp;&nbsp;&nbsp;&nbsp;+</p>
+                    </div>
+                </div>
+            </div>
+            <div id="imageItem"></div>
+            <div class="animosaic-footer">
+                <p><a href="https://forms.gle/SfZLfYVxKVJvZf4A8" target="_blank">Feedback</a></p>
+                <p class="magnifier-hints">&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                <p><a href="https://jdvp.me" target="_blank">Author</a></p>
+                <p class="magnifier-hints">&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                <p><a href="privacy/index.html" target="_blank">Privacy Policy</a></p>
+                <p class="magnifier-hints">&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                <p>&copy; 2020</p>
+            </div>
+        </div>
+    </body>
+</html>
