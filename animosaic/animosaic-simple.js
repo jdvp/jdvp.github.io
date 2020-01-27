@@ -7,11 +7,24 @@ var currentSize = defaultWidth;
 var lastSize = 0;
 
 function notifyMosaicComplete() {
+    var vw = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+    var vh = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+
     $('.rowholder').empty()
     tiles = animosaic.getLatest()
     rowCount = tiles[0].length
     columnCount = tiles.length;
-    defaultWidth = 100 / rowCount * .9;
+
+    var itemWidth = (100 / rowCount * .9)
+    var estimatedWidth = itemWidth * vw
+    var itemHeight = itemWidth * (4 / 3)
+    var estimatedHeight = columnCount * itemHeight * vw / 100
+
+    if (estimatedHeight > (vh * .70)) {
+        itemWidth = itemWidth * ((vh * .70) / estimatedHeight)
+    }
+
+    defaultWidth = itemWidth;
     previousSliderVal = 0;
     currentSize = defaultWidth;
     lastSize = -1;
@@ -69,6 +82,23 @@ function createPage() {
     setWidth(defaultWidth);
 }
 
+function checkScroll() {
+    var size = $(".mosaic-tile").first().width()
+    size = Math.ceil((size + 1) / 25) * 25;
+
+    $(".mosaic-tile").filter(function() {
+        var tile = $(this)
+        var src = tile.attr("src")
+        var name = tile.attr("img-name");
+        var expectedName = name + "?w=" + size + "&format=webp"
+        return isInViewport($(this)) && $(this).attr("src") != expectedName;
+    }).each(function() {
+        var tile = $(this)
+        var name = tile.attr("img-name");
+        tile.attr("src", name + "?w=" + size + "&format=webp");
+    });
+}
+
 $(document).ready(function() {
     $("#slider-horizontal").slider({
         orientation: "horizontal",
@@ -88,8 +118,14 @@ $(document).ready(function() {
             }
             currentSize = newSize;
             setWidth(currentSize);
+            checkScroll();
         }
     });
+
+    $('.rowholder').on('scroll', function() {
+        checkScroll()
+    })
+
     createPage();
 
     $('.animosaic-form-file-input').each(function() {
@@ -116,9 +152,6 @@ $(document).ready(function() {
 		input.addEventListener( 'focus', function(){ input.classList.add( 'has-focus' ); });
 		input.addEventListener( 'blur', function(){ input.classList.remove( 'has-focus' ); });    })
 });
-document.addEventListener("scroll", () => {
-    setWidth(currentSize);
-});
 
 function getInputImage() {
     return $('#imageInput').prop('files')[0];
@@ -126,4 +159,63 @@ function getInputImage() {
 
 function getInputUsername() {
     return $('#usernameInput')[0].value
+}
+
+function printImage() {
+    var width = $('#width-input')[0].value / rowCount
+
+    var clone = $(".rowholder").first().clone().removeClass("rowholder").addClass("duplicate")
+    clone.css({
+        "display": "grid",
+        "grid-template-columns": "repeat(" + rowCount + "," + width + "px)",
+        "grid-template-rows": "repeat(" + columnCount + "," + (width * (4 / 3)) + "px)",
+        "z-index": "-1"
+    });
+
+    var size = Math.ceil((width + 1) / 25) * 25;
+
+    clone.find(".mosaic-tile").each(function() {
+        var imgTag = $(this)
+        var name = imgTag.attr("img-name");
+        imgTag.attr("src", name + "?w=" + size + "&format=webp");
+    });
+
+    $('body').append(clone)
+
+     html2canvas(clone, {
+     logging: true,
+     letterRendering: 1,
+     allowTaint: false,
+     useCORS: true,
+     onrendered: function (canvas) {
+            canvas.toBlob(function(blob) {
+                console.log("got blob")
+                console.log(blob)
+                var objectUrl = window.URL.createObjectURL(blob, {
+                      type: "application/octet-stream"
+                })
+                saveAs(objectUrl, 'animosaic.png');
+                $('.duplicate').remove()
+            });
+         }
+     });
+}
+
+function saveAs(uri, filename) {
+    var link = document.createElement('a');
+    if (typeof link.download === 'string') {
+        link.href = uri;
+        link.download = filename;
+
+        //Firefox requires the link to be in the body
+        document.body.appendChild(link);
+
+        //simulate click
+        link.click();
+
+        //remove the link when done
+        document.body.removeChild(link);
+    } else {
+        window.open(uri);
+    }
 }

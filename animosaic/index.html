@@ -2,7 +2,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Animosaic</title>
+        <title>animosaic</title>
         <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
         <link rel="icon" href="./favicon.ico" type="image/x-icon">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -10,11 +10,13 @@
         <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.css"/>
         <script src=https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js></script>
         <script src=https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
         <script src="animosaic-simple.js"></script>
         <script src="kotlin.js"></script>
         <script src="kotlinx-coroutines-core.js"></script>
         <script src="kotlinx-serialization-kotlinx-serialization-runtime.js"></script>
         <script src="animosaic.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
         <!-- Global site tag (gtag.js) - Google Analytics -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-65831716-6"></script>
         <script>
@@ -29,15 +31,16 @@
     <body>
         <div class="animosaic-content">
             <div class="animosaic-header">
-                <h1>Animosaic</h1>
+                <h1>animosaic</h1>
             </div>
+            <div class="animosaic-prompt-overlay" onclick="$('.animosaic-prompt').hide(); $('.animosaic-prompt-overlay').hide();"></div>
             <div class="animosaic-prompt">
                 <div class="animosaic-prompt-image">
-                    <img src="mascot.png">
+                    <img src="mascot.webp">
                 </div>
                 <div class="animosaic-form">
                     <div class="animosaic-form-text">
-                        <h4>Create an Animosaic</h4>
+                        <h4>Create an animosaic</h4>
                         <p>
                             Create a mosaic consisting of anime you have watched! To get started, enter a MyAnimeList
                             account and an image for which you want to create an Animosaic!
@@ -47,7 +50,7 @@
                             the anime list you are checking has a lot of anime for the best results!
                         </p>
                     </div>
-                    <form class="animosaic-form-form" onsubmit="animosaic.createMosaic(); $('.animosaic-prompt').hide(); return false" autocomplete="off">
+                    <form class="animosaic-form-form" onsubmit="animosaic.createMosaic(); $('.animosaic-prompt').hide(); $('.animosaic-prompt-overlay').hide(); return false" autocomplete="off">
                         <input type="text" id="usernameInput" placeholder="MyAnimeList Username" required/>
                         <br>
                         <input class="animosaic-form-file-input" type="file" id="imageInput" accept="image/*" required>
@@ -59,7 +62,7 @@
             </div>
 
             <div class="animosaic-mosaic-controls">
-                <div class="rowholder " ondragstart=return!1 ondrop=return!1 style="max-height: 75vh; overflow-x: auto; overflow-y: auto;"></div>
+                <div class="rowholder" ondragstart=return!1 ondrop=return!1"></div>
                 <div class="bottom-control">
                     <div class="control-row">
                         <p>Magnification</p>
@@ -68,6 +71,11 @@
                         <p class="magnifier-hints">-&nbsp;&nbsp;&nbsp;&nbsp;</p>
                         <div id="slider-horizontal"></div>
                         <p class="magnifier-hints">&nbsp;&nbsp;&nbsp;&nbsp;+</p>
+                    </div>
+                    <div class="control-row" style="height:22px;"></div>
+                    <div class="control-row">
+                        <button class="animosaic-control-button" onclick="$('.animosaic-prompt').show(); $('.animosaic-prompt-overlay').show();">Another!</button>
+                        <button class="animosaic-control-button" id="export-button" data-toggle="modal" data-target="#myModal">Export as png</button>
                     </div>
                 </div>
             </div>
@@ -80,6 +88,34 @@
                 <p><a href="privacy/index.html" target="_blank">Privacy Policy</a></p>
                 <p class="magnifier-hints">&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;</p>
                 <p>&copy; 2020</p>
+            </div>
+            <div class="modal fade" id="myModal">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+
+                        <!-- Modal Header -->
+                        <div class="modal-header">
+                            <h4 class="modal-title">Export Mosaic</h4>
+                        </div>
+
+                        <!-- Modal body -->
+                        <div class="modal-body">
+                            <div class="animosaic-form-text">
+                                <p>
+                                    Please enter the width that you would like for the exported image. Note that larger
+                                    images will take longer to process. The max supported width is 8,192, but note
+                                    that some mobile browsers might not work well with even that limit.
+                                </p>
+                            </div>
+                            <form class="animosaic-form-form" onsubmit="printImage(); $('#myModal').modal('hide'); return false" autocomplete="off">
+                                <input type="number" id="width-input" placeholder="Desired width" min="0" max="8192" required/>
+                                <br>
+                                <button class="animosaic-button" type="submit">Export</button>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </body>

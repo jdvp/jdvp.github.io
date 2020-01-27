@@ -136,11 +136,7 @@ var animosaic = function (_, Kotlin, $module$kotlinx_serialization_kotlinx_seria
   Cache$CacheItem$Companion.prototype.serializer = function () {
     return Cache$CacheItem$$serializer_getInstance();
   };
-  Cache$CacheItem$Companion.$metadata$ = {
-    kind: Kind_OBJECT,
-    simpleName: 'Companion',
-    interfaces: []
-  };
+  Cache$CacheItem$Companion.$metadata$ = {kind: Kind_OBJECT, simpleName: 'Companion', interfaces: []};
   var Cache$CacheItem$Companion_instance = null;
   function Cache$CacheItem$Companion_getInstance() {
     if (Cache$CacheItem$Companion_instance === null) {
@@ -154,11 +150,9 @@ var animosaic = function (_, Kotlin, $module$kotlinx_serialization_kotlinx_seria
     this.descriptor.addElement_ivxn3r$('expiration', false);
     Cache$CacheItem$$serializer_instance = this;
   }
-  Object.defineProperty(Cache$CacheItem$$serializer.prototype, 'descriptor', {
-    get: function () {
-      return this.descriptor_zccgwe$_0;
-    }
-  });
+  Object.defineProperty(Cache$CacheItem$$serializer.prototype, 'descriptor', {get: function () {
+    return this.descriptor_zccgwe$_0;
+  }});
   Cache$CacheItem$$serializer.prototype.serialize_awe97i$ = function (encoder, obj) {
     var output = encoder.beginStructure_r0sa6z$(this.descriptor, []);
     output.encodeStringElement_bgm7zs$(this.descriptor, 0, obj.value);
@@ -168,8 +162,7 @@ var animosaic = function (_, Kotlin, $module$kotlinx_serialization_kotlinx_seria
   Cache$CacheItem$$serializer.prototype.deserialize_nts5qn$ = function (decoder) {
     var index, readAll = false;
     var bitMask0 = 0;
-    var local0
-    , local1;
+    var local0, local1;
     var input = decoder.beginStructure_r0sa6z$(this.descriptor, []);
     loopLabel: while (true) {
       index = input.decodeElementIndex_qatsm0$(this.descriptor);
@@ -197,11 +190,7 @@ var animosaic = function (_, Kotlin, $module$kotlinx_serialization_kotlinx_seria
   Cache$CacheItem$$serializer.prototype.childSerializers = function () {
     return [internal.StringSerializer, internal.LongSerializer];
   };
-  Cache$CacheItem$$serializer.$metadata$ = {
-    kind: Kind_OBJECT,
-    simpleName: '$serializer',
-    interfaces: [GeneratedSerializer]
-  };
+  Cache$CacheItem$$serializer.$metadata$ = {kind: Kind_OBJECT, simpleName: '$serializer', interfaces: [GeneratedSerializer]};
   var Cache$CacheItem$$serializer_instance = null;
   function Cache$CacheItem$$serializer_getInstance() {
     if (Cache$CacheItem$$serializer_instance === null) {
@@ -221,11 +210,7 @@ var animosaic = function (_, Kotlin, $module$kotlinx_serialization_kotlinx_seria
       $this.expiration = expiration;
     return $this;
   }
-  Cache$CacheItem.$metadata$ = {
-    kind: Kind_CLASS,
-    simpleName: 'CacheItem',
-    interfaces: []
-  };
+  Cache$CacheItem.$metadata$ = {kind: Kind_CLASS, simpleName: 'CacheItem', interfaces: []};
   Cache$CacheItem.prototype.component1 = function () {
     return this.value;
   };
@@ -247,221 +232,21 @@ var animosaic = function (_, Kotlin, $module$kotlinx_serialization_kotlinx_seria
   Cache$CacheItem.prototype.equals = function (other) {
     return this === other || (other !== null && (typeof other === 'object' && (Object.getPrototypeOf(this) === Object.getPrototypeOf(other) && (Kotlin.equals(this.value, other.value) && Kotlin.equals(this.expiration, other.expiration)))));
   };
-  function Cache$UserMap(map) {
-    Cache$UserMap$Companion_getInstance();
-    this.map = map;
-  }
-  function Cache$UserMap$Companion() {
-    Cache$UserMap$Companion_instance = this;
-  }
-  Cache$UserMap$Companion.prototype.serializer = function () {
-    return Cache$UserMap$$serializer_getInstance();
-  };
-  Cache$UserMap$Companion.$metadata$ = {
-    kind: Kind_OBJECT,
-    simpleName: 'Companion',
-    interfaces: []
-  };
   var Cache$UserMap$Companion_instance = null;
-  function Cache$UserMap$Companion_getInstance() {
-    if (Cache$UserMap$Companion_instance === null) {
-      new Cache$UserMap$Companion();
-    }
-    return Cache$UserMap$Companion_instance;
-  }
   function Cache$UserMap$$serializer() {
     this.descriptor_hnr3hm$_0 = new SerialClassDescImpl('Cache.UserMap', this);
     this.descriptor.addElement_ivxn3r$('map', false);
     Cache$UserMap$$serializer_instance = this;
   }
-  Object.defineProperty(Cache$UserMap$$serializer.prototype, 'descriptor', {
-    get: function () {
-      return this.descriptor_hnr3hm$_0;
-    }
-  });
-  Cache$UserMap$$serializer.prototype.serialize_awe97i$ = function (encoder, obj) {
-    var output = encoder.beginStructure_r0sa6z$(this.descriptor, []);
-    output.encodeSerializableElement_blecud$(this.descriptor, 0, new LinkedHashMapSerializer(internal.StringSerializer, User$$serializer_getInstance()), obj.map);
-    output.endStructure_qatsm0$(this.descriptor);
-  };
-  Cache$UserMap$$serializer.prototype.deserialize_nts5qn$ = function (decoder) {
-    var index, readAll = false;
-    var bitMask0 = 0;
-    var local0;
-    var input = decoder.beginStructure_r0sa6z$(this.descriptor, []);
-    loopLabel: while (true) {
-      index = input.decodeElementIndex_qatsm0$(this.descriptor);
-      switch (index) {
-        case -2:
-          readAll = true;
-        case 0:
-          local0 = (bitMask0 & 1) === 0 ? input.decodeSerializableElement_s44l7r$(this.descriptor, 0, new LinkedHashMapSerializer(internal.StringSerializer, User$$serializer_getInstance())) : input.updateSerializableElement_ehubvl$(this.descriptor, 0, new LinkedHashMapSerializer(internal.StringSerializer, User$$serializer_getInstance()), local0);
-          bitMask0 |= 1;
-          if (!readAll)
-            break;
-        case -1:
-          break loopLabel;
-        default:throw new UnknownFieldException(index);
-      }
-    }
-    input.endStructure_qatsm0$(this.descriptor);
-    return Cache$Cache$UserMap_init(bitMask0, local0, null);
-  };
-  Cache$UserMap$$serializer.prototype.childSerializers = function () {
-    return [new LinkedHashMapSerializer(internal.StringSerializer, User$$serializer_getInstance())];
-  };
-  Cache$UserMap$$serializer.$metadata$ = {
-    kind: Kind_OBJECT,
-    simpleName: '$serializer',
-    interfaces: [GeneratedSerializer]
-  };
   var Cache$UserMap$$serializer_instance = null;
-  function Cache$UserMap$$serializer_getInstance() {
-    if (Cache$UserMap$$serializer_instance === null) {
-      new Cache$UserMap$$serializer();
-    }
-    return Cache$UserMap$$serializer_instance;
-  }
-  function Cache$Cache$UserMap_init(seen1, map, serializationConstructorMarker) {
-    var $this = serializationConstructorMarker || Object.create(Cache$UserMap.prototype);
-    if ((seen1 & 1) === 0)
-      throw new MissingFieldException('map');
-    else
-      $this.map = map;
-    return $this;
-  }
-  Cache$UserMap.$metadata$ = {
-    kind: Kind_CLASS,
-    simpleName: 'UserMap',
-    interfaces: []
-  };
-  Cache$UserMap.prototype.component1 = function () {
-    return this.map;
-  };
-  Cache$UserMap.prototype.copy_bpya9n$ = function (map) {
-    return new Cache$UserMap(map === void 0 ? this.map : map);
-  };
-  Cache$UserMap.prototype.toString = function () {
-    return 'UserMap(map=' + Kotlin.toString(this.map) + ')';
-  };
-  Cache$UserMap.prototype.hashCode = function () {
-    var result = 0;
-    result = result * 31 + Kotlin.hashCode(this.map) | 0;
-    return result;
-  };
-  Cache$UserMap.prototype.equals = function (other) {
-    return this === other || (other !== null && (typeof other === 'object' && (Object.getPrototypeOf(this) === Object.getPrototypeOf(other) && Kotlin.equals(this.map, other.map))));
-  };
-  function Cache$ImageMap(map) {
-    Cache$ImageMap$Companion_getInstance();
-    this.map = map;
-  }
-  function Cache$ImageMap$Companion() {
-    Cache$ImageMap$Companion_instance = this;
-  }
-  Cache$ImageMap$Companion.prototype.serializer = function () {
-    return Cache$ImageMap$$serializer_getInstance();
-  };
-  Cache$ImageMap$Companion.$metadata$ = {
-    kind: Kind_OBJECT,
-    simpleName: 'Companion',
-    interfaces: []
-  };
   var Cache$ImageMap$Companion_instance = null;
-  function Cache$ImageMap$Companion_getInstance() {
-    if (Cache$ImageMap$Companion_instance === null) {
-      new Cache$ImageMap$Companion();
-    }
-    return Cache$ImageMap$Companion_instance;
-  }
   function Cache$ImageMap$$serializer() {
     this.descriptor_vfi632$_0 = new SerialClassDescImpl('Cache.ImageMap', this);
     this.descriptor.addElement_ivxn3r$('map', false);
     Cache$ImageMap$$serializer_instance = this;
   }
-  Object.defineProperty(Cache$ImageMap$$serializer.prototype, 'descriptor', {
-    get: function () {
-      return this.descriptor_vfi632$_0;
-    }
-  });
-  Cache$ImageMap$$serializer.prototype.serialize_awe97i$ = function (encoder, obj) {
-    var output = encoder.beginStructure_r0sa6z$(this.descriptor, []);
-    output.encodeSerializableElement_blecud$(this.descriptor, 0, new LinkedHashMapSerializer(internal.StringSerializer, Pixel$$serializer_getInstance()), obj.map);
-    output.endStructure_qatsm0$(this.descriptor);
-  };
-  Cache$ImageMap$$serializer.prototype.deserialize_nts5qn$ = function (decoder) {
-    var index, readAll = false;
-    var bitMask0 = 0;
-    var local0;
-    var input = decoder.beginStructure_r0sa6z$(this.descriptor, []);
-    loopLabel: while (true) {
-      index = input.decodeElementIndex_qatsm0$(this.descriptor);
-      switch (index) {
-        case -2:
-          readAll = true;
-        case 0:
-          local0 = (bitMask0 & 1) === 0 ? input.decodeSerializableElement_s44l7r$(this.descriptor, 0, new LinkedHashMapSerializer(internal.StringSerializer, Pixel$$serializer_getInstance())) : input.updateSerializableElement_ehubvl$(this.descriptor, 0, new LinkedHashMapSerializer(internal.StringSerializer, Pixel$$serializer_getInstance()), local0);
-          bitMask0 |= 1;
-          if (!readAll)
-            break;
-        case -1:
-          break loopLabel;
-        default:throw new UnknownFieldException(index);
-      }
-    }
-    input.endStructure_qatsm0$(this.descriptor);
-    return Cache$Cache$ImageMap_init(bitMask0, local0, null);
-  };
-  Cache$ImageMap$$serializer.prototype.childSerializers = function () {
-    return [new LinkedHashMapSerializer(internal.StringSerializer, Pixel$$serializer_getInstance())];
-  };
-  Cache$ImageMap$$serializer.$metadata$ = {
-    kind: Kind_OBJECT,
-    simpleName: '$serializer',
-    interfaces: [GeneratedSerializer]
-  };
   var Cache$ImageMap$$serializer_instance = null;
-  function Cache$ImageMap$$serializer_getInstance() {
-    if (Cache$ImageMap$$serializer_instance === null) {
-      new Cache$ImageMap$$serializer();
-    }
-    return Cache$ImageMap$$serializer_instance;
-  }
-  function Cache$Cache$ImageMap_init(seen1, map, serializationConstructorMarker) {
-    var $this = serializationConstructorMarker || Object.create(Cache$ImageMap.prototype);
-    if ((seen1 & 1) === 0)
-      throw new MissingFieldException('map');
-    else
-      $this.map = map;
-    return $this;
-  }
-  Cache$ImageMap.$metadata$ = {
-    kind: Kind_CLASS,
-    simpleName: 'ImageMap',
-    interfaces: []
-  };
-  Cache$ImageMap.prototype.component1 = function () {
-    return this.map;
-  };
-  Cache$ImageMap.prototype.copy_apcq2i$ = function (map) {
-    return new Cache$ImageMap(map === void 0 ? this.map : map);
-  };
-  Cache$ImageMap.prototype.toString = function () {
-    return 'ImageMap(map=' + Kotlin.toString(this.map) + ')';
-  };
-  Cache$ImageMap.prototype.hashCode = function () {
-    var result = 0;
-    result = result * 31 + Kotlin.hashCode(this.map) | 0;
-    return result;
-  };
-  Cache$ImageMap.prototype.equals = function (other) {
-    return this === other || (other !== null && (typeof other === 'object' && (Object.getPrototypeOf(this) === Object.getPrototypeOf(other) && Kotlin.equals(this.map, other.map))));
-  };
-  Cache.$metadata$ = {
-    kind: Kind_OBJECT,
-    simpleName: 'Cache',
-    interfaces: []
-  };
+  Cache.$metadata$ = {kind: Kind_OBJECT, simpleName: 'Cache', interfaces: []};
   var Cache_instance = null;
   function Cache_getInstance() {
     if (Cache_instance === null) {
@@ -480,11 +265,7 @@ var animosaic = function (_, Kotlin, $module$kotlinx_serialization_kotlinx_seria
     this.local$closure$requestId = closure$requestId_0;
     this.local$closure$username = closure$username_0;
   }
-  Coroutine$createMosaic$lambda.$metadata$ = {
-    kind: Kotlin.Kind.CLASS,
-    simpleName: null,
-    interfaces: [CoroutineImpl]
-  };
+  Coroutine$createMosaic$lambda.$metadata$ = {kind: Kotlin.Kind.CLASS, simpleName: null, interfaces: [CoroutineImpl]};
   Coroutine$createMosaic$lambda.prototype = Object.create(CoroutineImpl.prototype);
   Coroutine$createMosaic$lambda.prototype.constructor = Coroutine$createMosaic$lambda;
   Coroutine$createMosaic$lambda.prototype.doResume = function () {
@@ -541,7 +322,7 @@ var animosaic = function (_, Kotlin, $module$kotlinx_serialization_kotlinx_seria
     var username = typeof (tmp$ = getInputUsername()) === 'string' ? tmp$ : throwCCE();
     var file = Kotlin.isType(tmp$_0 = getInputImage(), File) ? tmp$_0 : throwCCE();
     var requestId = username + hashCode(file);
-    var mosaicWidth = 50;
+    var mosaicWidth = 105;
     launch(coroutines.GlobalScope, void 0, void 0, createMosaic$lambda(file, mosaicWidth, requestId, username));
   }
   function getLatest() {
@@ -563,11 +344,7 @@ var animosaic = function (_, Kotlin, $module$kotlinx_serialization_kotlinx_seria
     this.local$user = user_0;
     this.local$response = response_0;
   }
-  Coroutine$createMosaic.$metadata$ = {
-    kind: Kotlin.Kind.CLASS,
-    simpleName: null,
-    interfaces: [CoroutineImpl]
-  };
+  Coroutine$createMosaic.$metadata$ = {kind: Kotlin.Kind.CLASS, simpleName: null, interfaces: [CoroutineImpl]};
   Coroutine$createMosaic.prototype = Object.create(CoroutineImpl.prototype);
   Coroutine$createMosaic.prototype.constructor = Coroutine$createMosaic;
   Coroutine$createMosaic.prototype.doResume = function () {
@@ -660,11 +437,7 @@ var animosaic = function (_, Kotlin, $module$kotlinx_serialization_kotlinx_seria
     this.local$closure$user = closure$user_0;
     this.local$page = page_0;
   }
-  Coroutine$loadUserProfileFromJsonApi$lambda.$metadata$ = {
-    kind: Kotlin.Kind.CLASS,
-    simpleName: null,
-    interfaces: [CoroutineImpl]
-  };
+  Coroutine$loadUserProfileFromJsonApi$lambda.$metadata$ = {kind: Kotlin.Kind.CLASS, simpleName: null, interfaces: [CoroutineImpl]};
   Coroutine$loadUserProfileFromJsonApi$lambda.prototype = Object.create(CoroutineImpl.prototype);
   Coroutine$loadUserProfileFromJsonApi$lambda.prototype.constructor = Coroutine$loadUserProfileFromJsonApi$lambda;
   Coroutine$loadUserProfileFromJsonApi$lambda.prototype.doResume = function () {
@@ -718,13 +491,10 @@ var animosaic = function (_, Kotlin, $module$kotlinx_serialization_kotlinx_seria
     CoroutineImpl.call(this, continuation_0);
     this.exceptionState_0 = 1;
     this.local$startTime = void 0;
+    this.local$newUser = void 0;
     this.local$user = user_0;
   }
-  Coroutine$loadUserProfileFromJsonApi.$metadata$ = {
-    kind: Kotlin.Kind.CLASS,
-    simpleName: null,
-    interfaces: [CoroutineImpl]
-  };
+  Coroutine$loadUserProfileFromJsonApi.$metadata$ = {kind: Kotlin.Kind.CLASS, simpleName: null, interfaces: [CoroutineImpl]};
   Coroutine$loadUserProfileFromJsonApi.prototype = Object.create(CoroutineImpl.prototype);
   Coroutine$loadUserProfileFromJsonApi.prototype.constructor = Coroutine$loadUserProfileFromJsonApi;
   Coroutine$loadUserProfileFromJsonApi.prototype.doResume = function () {
@@ -745,9 +515,44 @@ var animosaic = function (_, Kotlin, $module$kotlinx_serialization_kotlinx_seria
             var tiles = distinct(flatten(this.result_0));
             println('JIKAN finished, user ' + this.local$user + ' has ' + tiles.size + ' anime. Took ' + ((new Date()).getTime() - this.local$startTime) + ' milliseconds.');
             println('JIKAN ' + tiles);
-            var newUser = new User(this.local$user, UserStatus$COMPLETE_getInstance(), toSet(tiles));
-            Cache_getInstance().setUser_1kpnv$(newUser);
-            return newUser;
+            this.local$newUser = new User(this.local$user, UserStatus$COMPLETE_getInstance(), toSet(tiles));
+            Cache_getInstance().setUser_1kpnv$(this.local$newUser);
+            if (this.local$newUser.watchedAnime.isEmpty()) {
+              this.state_0 = 3;
+              this.result_0 = await_0(window.fetch(new Request('./default/default-anime.json')), this);
+              if (this.result_0 === COROUTINE_SUSPENDED)
+                return COROUTINE_SUSPENDED;
+              continue;
+            }
+             else {
+              this.state_0 = 5;
+              continue;
+            }
+
+          case 3:
+            this.state_0 = 4;
+            this.result_0 = await_0(this.result_0.text(), this);
+            if (this.result_0 === COROUTINE_SUSPENDED)
+              return COROUTINE_SUSPENDED;
+            continue;
+          case 4:
+            var defaultJson = this.result_0;
+            var json = new Json(JsonConfiguration.Companion.Stable.copy_u5l5z3$(void 0, false));
+            var ktResponse = json.parse_awif5v$(DefaultListResponse$Companion_getInstance().serializer(), defaultJson);
+            var $receiver = ktResponse.default;
+            var destination = ArrayList_init(collectionSizeOrDefault($receiver, 10));
+            var tmp$;
+            tmp$ = $receiver.iterator();
+            while (tmp$.hasNext()) {
+              var item = tmp$.next();
+              destination.add_11rb$(new TileItem('https://myanimelist.net/anime/' + toString(item.link), 'https://animosaic2.gumlet.com/' + toString(item.image)));
+            }
+
+            this.local$newUser.watchedAnime = toSet(destination);
+            this.state_0 = 5;
+            continue;
+          case 5:
+            return this.local$newUser;
           default:this.state_0 = 1;
             throw new Error('State Machine Unreachable execution');
         }
@@ -776,11 +581,7 @@ var animosaic = function (_, Kotlin, $module$kotlinx_serialization_kotlinx_seria
     this.exceptionState_0 = 1;
     this.local$it = it_0;
   }
-  Coroutine$makeJikanRequest$lambda.$metadata$ = {
-    kind: Kotlin.Kind.CLASS,
-    simpleName: null,
-    interfaces: [CoroutineImpl]
-  };
+  Coroutine$makeJikanRequest$lambda.$metadata$ = {kind: Kotlin.Kind.CLASS, simpleName: null, interfaces: [CoroutineImpl]};
   Coroutine$makeJikanRequest$lambda.prototype = Object.create(CoroutineImpl.prototype);
   Coroutine$makeJikanRequest$lambda.prototype.constructor = Coroutine$makeJikanRequest$lambda;
   Coroutine$makeJikanRequest$lambda.prototype.doResume = function () {
@@ -826,11 +627,7 @@ var animosaic = function (_, Kotlin, $module$kotlinx_serialization_kotlinx_seria
     this.local$username = username_0;
     this.local$pageNumber = pageNumber_0;
   }
-  Coroutine$makeJikanRequest.$metadata$ = {
-    kind: Kotlin.Kind.CLASS,
-    simpleName: null,
-    interfaces: [CoroutineImpl]
-  };
+  Coroutine$makeJikanRequest.$metadata$ = {kind: Kotlin.Kind.CLASS, simpleName: null, interfaces: [CoroutineImpl]};
   Coroutine$makeJikanRequest.prototype = Object.create(CoroutineImpl.prototype);
   Coroutine$makeJikanRequest.prototype.constructor = Coroutine$makeJikanRequest;
   Coroutine$makeJikanRequest.prototype.doResume = function () {
@@ -905,11 +702,7 @@ var animosaic = function (_, Kotlin, $module$kotlinx_serialization_kotlinx_seria
     this.local$closure$f = closure$f_0;
     this.local$closure$it = closure$it_0;
   }
-  Coroutine$pmap$lambda$lambda$lambda.$metadata$ = {
-    kind: Kotlin.Kind.CLASS,
-    simpleName: null,
-    interfaces: [CoroutineImpl]
-  };
+  Coroutine$pmap$lambda$lambda$lambda.$metadata$ = {kind: Kotlin.Kind.CLASS, simpleName: null, interfaces: [CoroutineImpl]};
   Coroutine$pmap$lambda$lambda$lambda.prototype = Object.create(CoroutineImpl.prototype);
   Coroutine$pmap$lambda$lambda$lambda.prototype.constructor = Coroutine$pmap$lambda$lambda$lambda;
   Coroutine$pmap$lambda$lambda$lambda.prototype.doResume = function () {
@@ -959,11 +752,7 @@ var animosaic = function (_, Kotlin, $module$kotlinx_serialization_kotlinx_seria
     this.local$this$pmap = this$pmap_0;
     this.local$$receiver = $receiver_0;
   }
-  Coroutine$pmap$lambda.$metadata$ = {
-    kind: Kotlin.Kind.CLASS,
-    simpleName: null,
-    interfaces: [CoroutineImpl]
-  };
+  Coroutine$pmap$lambda.$metadata$ = {kind: Kotlin.Kind.CLASS, simpleName: null, interfaces: [CoroutineImpl]};
   Coroutine$pmap$lambda.prototype = Object.create(CoroutineImpl.prototype);
   Coroutine$pmap$lambda.prototype.constructor = Coroutine$pmap$lambda;
   Coroutine$pmap$lambda.prototype.doResume = function () {
@@ -1082,11 +871,7 @@ var animosaic = function (_, Kotlin, $module$kotlinx_serialization_kotlinx_seria
     this.local$username = username_0;
     this.local$pageNumber = pageNumber_0;
   }
-  Coroutine$loadAnimeList.$metadata$ = {
-    kind: Kotlin.Kind.CLASS,
-    simpleName: null,
-    interfaces: [CoroutineImpl]
-  };
+  Coroutine$loadAnimeList.$metadata$ = {kind: Kotlin.Kind.CLASS, simpleName: null, interfaces: [CoroutineImpl]};
   Coroutine$loadAnimeList.prototype = Object.create(CoroutineImpl.prototype);
   Coroutine$loadAnimeList.prototype.constructor = Coroutine$loadAnimeList;
   Coroutine$loadAnimeList.prototype.doResume = function () {
@@ -1137,67 +922,6 @@ var animosaic = function (_, Kotlin, $module$kotlinx_serialization_kotlinx_seria
     var imageName = first(split(replace(image, 'https://cdn.myanimelist.net/images/anime/', ''), ['?']));
     return 'https://animosaic2.gumlet.com/' + imageName;
   }
-  function sleep$lambda$lambda(closure$resolve) {
-    return function () {
-      closure$resolve(true);
-      return Unit;
-    };
-  }
-  function sleep$lambda(closure$millis) {
-    return function (resolve, f) {
-      window.setTimeout(sleep$lambda$lambda(resolve), closure$millis);
-      return Unit;
-    };
-  }
-  function Coroutine$sleep(millis_0, continuation_0) {
-    CoroutineImpl.call(this, continuation_0);
-    this.exceptionState_0 = 1;
-    this.local$millis = millis_0;
-  }
-  Coroutine$sleep.$metadata$ = {
-    kind: Kotlin.Kind.CLASS,
-    simpleName: null,
-    interfaces: [CoroutineImpl]
-  };
-  Coroutine$sleep.prototype = Object.create(CoroutineImpl.prototype);
-  Coroutine$sleep.prototype.constructor = Coroutine$sleep;
-  Coroutine$sleep.prototype.doResume = function () {
-    do
-      try {
-        switch (this.state_0) {
-          case 0:
-            this.state_0 = 2;
-            this.result_0 = await_0(new Promise(sleep$lambda(this.local$millis)), this);
-            if (this.result_0 === COROUTINE_SUSPENDED)
-              return COROUTINE_SUSPENDED;
-            continue;
-          case 1:
-            throw this.exception_0;
-          case 2:
-            return;
-          default:this.state_0 = 1;
-            throw new Error('State Machine Unreachable execution');
-        }
-      }
-       catch (e) {
-        if (this.state_0 === 1) {
-          this.exceptionState_0 = this.state_0;
-          throw e;
-        }
-         else {
-          this.state_0 = this.exceptionState_0;
-          this.exception_0 = e;
-        }
-      }
-     while (true);
-  };
-  function sleep(millis_0, continuation_0, suspended) {
-    var instance = new Coroutine$sleep(millis_0, continuation_0);
-    if (suspended)
-      return instance;
-    else
-      return instance.doResume(null);
-  }
   function TileItem(link, image) {
     TileItem$Companion_getInstance();
     if (link === void 0)
@@ -1213,11 +937,7 @@ var animosaic = function (_, Kotlin, $module$kotlinx_serialization_kotlinx_seria
   TileItem$Companion.prototype.serializer = function () {
     return TileItem$$serializer_getInstance();
   };
-  TileItem$Companion.$metadata$ = {
-    kind: Kind_OBJECT,
-    simpleName: 'Companion',
-    interfaces: []
-  };
+  TileItem$Companion.$metadata$ = {kind: Kind_OBJECT, simpleName: 'Companion', interfaces: []};
   var TileItem$Companion_instance = null;
   function TileItem$Companion_getInstance() {
     if (TileItem$Companion_instance === null) {
@@ -1231,11 +951,9 @@ var animosaic = function (_, Kotlin, $module$kotlinx_serialization_kotlinx_seria
     this.descriptor.addElement_ivxn3r$('image', true);
     TileItem$$serializer_instance = this;
   }
-  Object.defineProperty(TileItem$$serializer.prototype, 'descriptor', {
-    get: function () {
-      return this.descriptor_jrs29y$_0;
-    }
-  });
+  Object.defineProperty(TileItem$$serializer.prototype, 'descriptor', {get: function () {
+    return this.descriptor_jrs29y$_0;
+  }});
   TileItem$$serializer.prototype.serialize_awe97i$ = function (encoder, obj) {
     var output = encoder.beginStructure_r0sa6z$(this.descriptor, []);
     if (!equals(obj.link, null) || output.shouldEncodeElementDefault_3zr2iy$(this.descriptor, 0))
@@ -1247,8 +965,7 @@ var animosaic = function (_, Kotlin, $module$kotlinx_serialization_kotlinx_seria
   TileItem$$serializer.prototype.deserialize_nts5qn$ = function (decoder) {
     var index, readAll = false;
     var bitMask0 = 0;
-    var local0
-    , local1;
+    var local0, local1;
     var input = decoder.beginStructure_r0sa6z$(this.descriptor, []);
     loopLabel: while (true) {
       index = input.decodeElementIndex_qatsm0$(this.descriptor);
@@ -1276,11 +993,7 @@ var animosaic = function (_, Kotlin, $module$kotlinx_serialization_kotlinx_seria
   TileItem$$serializer.prototype.childSerializers = function () {
     return [new NullableSerializer(internal.StringSerializer), new NullableSerializer(internal.StringSerializer)];
   };
-  TileItem$$serializer.$metadata$ = {
-    kind: Kind_OBJECT,
-    simpleName: '$serializer',
-    interfaces: [GeneratedSerializer]
-  };
+  TileItem$$serializer.$metadata$ = {kind: Kind_OBJECT, simpleName: '$serializer', interfaces: [GeneratedSerializer]};
   var TileItem$$serializer_instance = null;
   function TileItem$$serializer_getInstance() {
     if (TileItem$$serializer_instance === null) {
@@ -1300,11 +1013,7 @@ var animosaic = function (_, Kotlin, $module$kotlinx_serialization_kotlinx_seria
       $this.image = image;
     return $this;
   }
-  TileItem.$metadata$ = {
-    kind: Kind_CLASS,
-    simpleName: 'TileItem',
-    interfaces: []
-  };
+  TileItem.$metadata$ = {kind: Kind_CLASS, simpleName: 'TileItem', interfaces: []};
   TileItem.prototype.component1 = function () {
     return this.link;
   };
@@ -1343,11 +1052,7 @@ var animosaic = function (_, Kotlin, $module$kotlinx_serialization_kotlinx_seria
   User$Companion.prototype.serializer = function () {
     return User$$serializer_getInstance();
   };
-  User$Companion.$metadata$ = {
-    kind: Kind_OBJECT,
-    simpleName: 'Companion',
-    interfaces: []
-  };
+  User$Companion.$metadata$ = {kind: Kind_OBJECT, simpleName: 'Companion', interfaces: []};
   var User$Companion_instance = null;
   function User$Companion_getInstance() {
     if (User$Companion_instance === null) {
@@ -1362,11 +1067,9 @@ var animosaic = function (_, Kotlin, $module$kotlinx_serialization_kotlinx_seria
     this.descriptor.addElement_ivxn3r$('watchedAnime', true);
     User$$serializer_instance = this;
   }
-  Object.defineProperty(User$$serializer.prototype, 'descriptor', {
-    get: function () {
-      return this.descriptor_5jv2b4$_0;
-    }
-  });
+  Object.defineProperty(User$$serializer.prototype, 'descriptor', {get: function () {
+    return this.descriptor_5jv2b4$_0;
+  }});
   User$$serializer.prototype.serialize_awe97i$ = function (encoder, obj) {
     var output = encoder.beginStructure_r0sa6z$(this.descriptor, []);
     output.encodeStringElement_bgm7zs$(this.descriptor, 0, obj.username);
@@ -1379,9 +1082,7 @@ var animosaic = function (_, Kotlin, $module$kotlinx_serialization_kotlinx_seria
   User$$serializer.prototype.deserialize_nts5qn$ = function (decoder) {
     var index, readAll = false;
     var bitMask0 = 0;
-    var local0
-    , local1
-    , local2;
+    var local0, local1, local2;
     var input = decoder.beginStructure_r0sa6z$(this.descriptor, []);
     loopLabel: while (true) {
       index = input.decodeElementIndex_qatsm0$(this.descriptor);
@@ -1414,11 +1115,7 @@ var animosaic = function (_, Kotlin, $module$kotlinx_serialization_kotlinx_seria
   User$$serializer.prototype.childSerializers = function () {
     return [internal.StringSerializer, UserStatus$$serializer_getInstance(), new LinkedHashSetSerializer(TileItem$$serializer_getInstance())];
   };
-  User$$serializer.$metadata$ = {
-    kind: Kind_OBJECT,
-    simpleName: '$serializer',
-    interfaces: [GeneratedSerializer]
-  };
+  User$$serializer.$metadata$ = {kind: Kind_OBJECT, simpleName: '$serializer', interfaces: [GeneratedSerializer]};
   var User$$serializer_instance = null;
   function User$$serializer_getInstance() {
     if (User$$serializer_instance === null) {
@@ -1443,11 +1140,7 @@ var animosaic = function (_, Kotlin, $module$kotlinx_serialization_kotlinx_seria
       $this.watchedAnime = watchedAnime;
     return $this;
   }
-  User.$metadata$ = {
-    kind: Kind_CLASS,
-    simpleName: 'User',
-    interfaces: []
-  };
+  User.$metadata$ = {kind: Kind_CLASS, simpleName: 'User', interfaces: []};
   User.prototype.component1 = function () {
     return this.username;
   };
@@ -1489,11 +1182,7 @@ var animosaic = function (_, Kotlin, $module$kotlinx_serialization_kotlinx_seria
   MosaicStatusResponse$Companion.prototype.serializer = function () {
     return MosaicStatusResponse$$serializer_getInstance();
   };
-  MosaicStatusResponse$Companion.$metadata$ = {
-    kind: Kind_OBJECT,
-    simpleName: 'Companion',
-    interfaces: []
-  };
+  MosaicStatusResponse$Companion.$metadata$ = {kind: Kind_OBJECT, simpleName: 'Companion', interfaces: []};
   var MosaicStatusResponse$Companion_instance = null;
   function MosaicStatusResponse$Companion_getInstance() {
     if (MosaicStatusResponse$Companion_instance === null) {
@@ -1508,11 +1197,9 @@ var animosaic = function (_, Kotlin, $module$kotlinx_serialization_kotlinx_seria
     this.descriptor.addElement_ivxn3r$('mosaic', true);
     MosaicStatusResponse$$serializer_instance = this;
   }
-  Object.defineProperty(MosaicStatusResponse$$serializer.prototype, 'descriptor', {
-    get: function () {
-      return this.descriptor_iz1wwu$_0;
-    }
-  });
+  Object.defineProperty(MosaicStatusResponse$$serializer.prototype, 'descriptor', {get: function () {
+    return this.descriptor_iz1wwu$_0;
+  }});
   MosaicStatusResponse$$serializer.prototype.serialize_awe97i$ = function (encoder, obj) {
     var output = encoder.beginStructure_r0sa6z$(this.descriptor, []);
     output.encodeStringElement_bgm7zs$(this.descriptor, 0, obj.id);
@@ -1525,9 +1212,7 @@ var animosaic = function (_, Kotlin, $module$kotlinx_serialization_kotlinx_seria
   MosaicStatusResponse$$serializer.prototype.deserialize_nts5qn$ = function (decoder) {
     var index, readAll = false;
     var bitMask0 = 0;
-    var local0
-    , local1
-    , local2;
+    var local0, local1, local2;
     var input = decoder.beginStructure_r0sa6z$(this.descriptor, []);
     loopLabel: while (true) {
       index = input.decodeElementIndex_qatsm0$(this.descriptor);
@@ -1560,11 +1245,7 @@ var animosaic = function (_, Kotlin, $module$kotlinx_serialization_kotlinx_seria
   MosaicStatusResponse$$serializer.prototype.childSerializers = function () {
     return [internal.StringSerializer, MosaicStatus$$serializer_getInstance(), new NullableSerializer(new ArrayListSerializer(new ArrayListSerializer(TileItem$$serializer_getInstance())))];
   };
-  MosaicStatusResponse$$serializer.$metadata$ = {
-    kind: Kind_OBJECT,
-    simpleName: '$serializer',
-    interfaces: [GeneratedSerializer]
-  };
+  MosaicStatusResponse$$serializer.$metadata$ = {kind: Kind_OBJECT, simpleName: '$serializer', interfaces: [GeneratedSerializer]};
   var MosaicStatusResponse$$serializer_instance = null;
   function MosaicStatusResponse$$serializer_getInstance() {
     if (MosaicStatusResponse$$serializer_instance === null) {
@@ -1588,11 +1269,7 @@ var animosaic = function (_, Kotlin, $module$kotlinx_serialization_kotlinx_seria
       $this.mosaic = mosaic;
     return $this;
   }
-  MosaicStatusResponse.$metadata$ = {
-    kind: Kind_CLASS,
-    simpleName: 'MosaicStatusResponse',
-    interfaces: []
-  };
+  MosaicStatusResponse.$metadata$ = {kind: Kind_CLASS, simpleName: 'MosaicStatusResponse', interfaces: []};
   MosaicStatusResponse.prototype.component1 = function () {
     return this.id;
   };
@@ -1653,11 +1330,7 @@ var animosaic = function (_, Kotlin, $module$kotlinx_serialization_kotlinx_seria
   MosaicStatus$Companion.prototype.serializer = function () {
     return MosaicStatus$$serializer_getInstance();
   };
-  MosaicStatus$Companion.$metadata$ = {
-    kind: Kind_OBJECT,
-    simpleName: 'Companion',
-    interfaces: []
-  };
+  MosaicStatus$Companion.$metadata$ = {kind: Kind_OBJECT, simpleName: 'Companion', interfaces: []};
   var MosaicStatus$Companion_instance = null;
   function MosaicStatus$Companion_getInstance() {
     if (MosaicStatus$Companion_instance === null) {
@@ -1672,11 +1345,9 @@ var animosaic = function (_, Kotlin, $module$kotlinx_serialization_kotlinx_seria
     this.descriptor.addElement_ivxn3r$('COMPLETE');
     MosaicStatus$$serializer_instance = this;
   }
-  Object.defineProperty(MosaicStatus$$serializer.prototype, 'descriptor', {
-    get: function () {
-      return this.descriptor_dwfm0v$_0;
-    }
-  });
+  Object.defineProperty(MosaicStatus$$serializer.prototype, 'descriptor', {get: function () {
+    return this.descriptor_dwfm0v$_0;
+  }});
   MosaicStatus$$serializer.prototype.serialize_awe97i$ = function (encoder, obj) {
     encoder.encodeEnum_3zr2iy$(this.descriptor, obj.ordinal);
   };
@@ -1686,11 +1357,7 @@ var animosaic = function (_, Kotlin, $module$kotlinx_serialization_kotlinx_seria
   MosaicStatus$$serializer.prototype.childSerializers = function () {
     return [];
   };
-  MosaicStatus$$serializer.$metadata$ = {
-    kind: Kind_OBJECT,
-    simpleName: '$serializer',
-    interfaces: [GeneratedSerializer]
-  };
+  MosaicStatus$$serializer.$metadata$ = {kind: Kind_OBJECT, simpleName: '$serializer', interfaces: [GeneratedSerializer]};
   var MosaicStatus$$serializer_instance = null;
   function MosaicStatus$$serializer_getInstance() {
     if (MosaicStatus$$serializer_instance === null) {
@@ -1698,11 +1365,7 @@ var animosaic = function (_, Kotlin, $module$kotlinx_serialization_kotlinx_seria
     }
     return MosaicStatus$$serializer_instance;
   }
-  MosaicStatus.$metadata$ = {
-    kind: Kind_CLASS,
-    simpleName: 'MosaicStatus',
-    interfaces: [Enum]
-  };
+  MosaicStatus.$metadata$ = {kind: Kind_CLASS, simpleName: 'MosaicStatus', interfaces: [Enum]};
   function MosaicStatus$values() {
     return [MosaicStatus$LOADING_USER_DATA_getInstance(), MosaicStatus$CREATING_MOSAIC_getInstance(), MosaicStatus$COMPLETE_getInstance()];
   }
@@ -1748,11 +1411,7 @@ var animosaic = function (_, Kotlin, $module$kotlinx_serialization_kotlinx_seria
   UserStatus$Companion.prototype.serializer = function () {
     return UserStatus$$serializer_getInstance();
   };
-  UserStatus$Companion.$metadata$ = {
-    kind: Kind_OBJECT,
-    simpleName: 'Companion',
-    interfaces: []
-  };
+  UserStatus$Companion.$metadata$ = {kind: Kind_OBJECT, simpleName: 'Companion', interfaces: []};
   var UserStatus$Companion_instance = null;
   function UserStatus$Companion_getInstance() {
     if (UserStatus$Companion_instance === null) {
@@ -1766,11 +1425,9 @@ var animosaic = function (_, Kotlin, $module$kotlinx_serialization_kotlinx_seria
     this.descriptor.addElement_ivxn3r$('COMPLETE');
     UserStatus$$serializer_instance = this;
   }
-  Object.defineProperty(UserStatus$$serializer.prototype, 'descriptor', {
-    get: function () {
-      return this.descriptor_209v7m$_0;
-    }
-  });
+  Object.defineProperty(UserStatus$$serializer.prototype, 'descriptor', {get: function () {
+    return this.descriptor_209v7m$_0;
+  }});
   UserStatus$$serializer.prototype.serialize_awe97i$ = function (encoder, obj) {
     encoder.encodeEnum_3zr2iy$(this.descriptor, obj.ordinal);
   };
@@ -1780,11 +1437,7 @@ var animosaic = function (_, Kotlin, $module$kotlinx_serialization_kotlinx_seria
   UserStatus$$serializer.prototype.childSerializers = function () {
     return [];
   };
-  UserStatus$$serializer.$metadata$ = {
-    kind: Kind_OBJECT,
-    simpleName: '$serializer',
-    interfaces: [GeneratedSerializer]
-  };
+  UserStatus$$serializer.$metadata$ = {kind: Kind_OBJECT, simpleName: '$serializer', interfaces: [GeneratedSerializer]};
   var UserStatus$$serializer_instance = null;
   function UserStatus$$serializer_getInstance() {
     if (UserStatus$$serializer_instance === null) {
@@ -1792,11 +1445,7 @@ var animosaic = function (_, Kotlin, $module$kotlinx_serialization_kotlinx_seria
     }
     return UserStatus$$serializer_instance;
   }
-  UserStatus.$metadata$ = {
-    kind: Kind_CLASS,
-    simpleName: 'UserStatus',
-    interfaces: [Enum]
-  };
+  UserStatus.$metadata$ = {kind: Kind_CLASS, simpleName: 'UserStatus', interfaces: [Enum]};
   function UserStatus$values() {
     return [UserStatus$LOADING_USER_DATA_getInstance(), UserStatus$COMPLETE_getInstance()];
   }
@@ -1821,11 +1470,7 @@ var animosaic = function (_, Kotlin, $module$kotlinx_serialization_kotlinx_seria
   JikanListResponse$Companion.prototype.serializer = function () {
     return JikanListResponse$$serializer_getInstance();
   };
-  JikanListResponse$Companion.$metadata$ = {
-    kind: Kind_OBJECT,
-    simpleName: 'Companion',
-    interfaces: []
-  };
+  JikanListResponse$Companion.$metadata$ = {kind: Kind_OBJECT, simpleName: 'Companion', interfaces: []};
   var JikanListResponse$Companion_instance = null;
   function JikanListResponse$Companion_getInstance() {
     if (JikanListResponse$Companion_instance === null) {
@@ -1838,11 +1483,9 @@ var animosaic = function (_, Kotlin, $module$kotlinx_serialization_kotlinx_seria
     this.descriptor.addElement_ivxn3r$('anime', false);
     JikanListResponse$$serializer_instance = this;
   }
-  Object.defineProperty(JikanListResponse$$serializer.prototype, 'descriptor', {
-    get: function () {
-      return this.descriptor_3vwo1v$_0;
-    }
-  });
+  Object.defineProperty(JikanListResponse$$serializer.prototype, 'descriptor', {get: function () {
+    return this.descriptor_3vwo1v$_0;
+  }});
   JikanListResponse$$serializer.prototype.serialize_awe97i$ = function (encoder, obj) {
     var output = encoder.beginStructure_r0sa6z$(this.descriptor, []);
     output.encodeNullableSerializableElement_orpvvi$(this.descriptor, 0, new ArrayListSerializer(JikanAnime$$serializer_getInstance()), obj.anime);
@@ -1874,11 +1517,7 @@ var animosaic = function (_, Kotlin, $module$kotlinx_serialization_kotlinx_seria
   JikanListResponse$$serializer.prototype.childSerializers = function () {
     return [new NullableSerializer(new ArrayListSerializer(JikanAnime$$serializer_getInstance()))];
   };
-  JikanListResponse$$serializer.$metadata$ = {
-    kind: Kind_OBJECT,
-    simpleName: '$serializer',
-    interfaces: [GeneratedSerializer]
-  };
+  JikanListResponse$$serializer.$metadata$ = {kind: Kind_OBJECT, simpleName: '$serializer', interfaces: [GeneratedSerializer]};
   var JikanListResponse$$serializer_instance = null;
   function JikanListResponse$$serializer_getInstance() {
     if (JikanListResponse$$serializer_instance === null) {
@@ -1894,11 +1533,7 @@ var animosaic = function (_, Kotlin, $module$kotlinx_serialization_kotlinx_seria
       $this.anime = anime;
     return $this;
   }
-  JikanListResponse.$metadata$ = {
-    kind: Kind_CLASS,
-    simpleName: 'JikanListResponse',
-    interfaces: []
-  };
+  JikanListResponse.$metadata$ = {kind: Kind_CLASS, simpleName: 'JikanListResponse', interfaces: []};
   JikanListResponse.prototype.component1 = function () {
     return this.anime;
   };
@@ -1916,6 +1551,97 @@ var animosaic = function (_, Kotlin, $module$kotlinx_serialization_kotlinx_seria
   JikanListResponse.prototype.equals = function (other) {
     return this === other || (other !== null && (typeof other === 'object' && (Object.getPrototypeOf(this) === Object.getPrototypeOf(other) && Kotlin.equals(this.anime, other.anime))));
   };
+  function DefaultListResponse(default_0) {
+    DefaultListResponse$Companion_getInstance();
+    this.default = default_0;
+  }
+  function DefaultListResponse$Companion() {
+    DefaultListResponse$Companion_instance = this;
+  }
+  DefaultListResponse$Companion.prototype.serializer = function () {
+    return DefaultListResponse$$serializer_getInstance();
+  };
+  DefaultListResponse$Companion.$metadata$ = {kind: Kind_OBJECT, simpleName: 'Companion', interfaces: []};
+  var DefaultListResponse$Companion_instance = null;
+  function DefaultListResponse$Companion_getInstance() {
+    if (DefaultListResponse$Companion_instance === null) {
+      new DefaultListResponse$Companion();
+    }
+    return DefaultListResponse$Companion_instance;
+  }
+  function DefaultListResponse$$serializer() {
+    this.descriptor_69o9ff$_0 = new SerialClassDescImpl('DefaultListResponse', this);
+    this.descriptor.addElement_ivxn3r$('default', false);
+    DefaultListResponse$$serializer_instance = this;
+  }
+  Object.defineProperty(DefaultListResponse$$serializer.prototype, 'descriptor', {get: function () {
+    return this.descriptor_69o9ff$_0;
+  }});
+  DefaultListResponse$$serializer.prototype.serialize_awe97i$ = function (encoder, obj) {
+    var output = encoder.beginStructure_r0sa6z$(this.descriptor, []);
+    output.encodeSerializableElement_blecud$(this.descriptor, 0, new ArrayListSerializer(TileItem$$serializer_getInstance()), obj.default);
+    output.endStructure_qatsm0$(this.descriptor);
+  };
+  DefaultListResponse$$serializer.prototype.deserialize_nts5qn$ = function (decoder) {
+    var index, readAll = false;
+    var bitMask0 = 0;
+    var local0;
+    var input = decoder.beginStructure_r0sa6z$(this.descriptor, []);
+    loopLabel: while (true) {
+      index = input.decodeElementIndex_qatsm0$(this.descriptor);
+      switch (index) {
+        case -2:
+          readAll = true;
+        case 0:
+          local0 = (bitMask0 & 1) === 0 ? input.decodeSerializableElement_s44l7r$(this.descriptor, 0, new ArrayListSerializer(TileItem$$serializer_getInstance())) : input.updateSerializableElement_ehubvl$(this.descriptor, 0, new ArrayListSerializer(TileItem$$serializer_getInstance()), local0);
+          bitMask0 |= 1;
+          if (!readAll)
+            break;
+        case -1:
+          break loopLabel;
+        default:throw new UnknownFieldException(index);
+      }
+    }
+    input.endStructure_qatsm0$(this.descriptor);
+    return DefaultListResponse_init(bitMask0, local0, null);
+  };
+  DefaultListResponse$$serializer.prototype.childSerializers = function () {
+    return [new ArrayListSerializer(TileItem$$serializer_getInstance())];
+  };
+  DefaultListResponse$$serializer.$metadata$ = {kind: Kind_OBJECT, simpleName: '$serializer', interfaces: [GeneratedSerializer]};
+  var DefaultListResponse$$serializer_instance = null;
+  function DefaultListResponse$$serializer_getInstance() {
+    if (DefaultListResponse$$serializer_instance === null) {
+      new DefaultListResponse$$serializer();
+    }
+    return DefaultListResponse$$serializer_instance;
+  }
+  function DefaultListResponse_init(seen1, default_0, serializationConstructorMarker) {
+    var $this = serializationConstructorMarker || Object.create(DefaultListResponse.prototype);
+    if ((seen1 & 1) === 0)
+      throw new MissingFieldException('default');
+    else
+      $this.default = default_0;
+    return $this;
+  }
+  DefaultListResponse.$metadata$ = {kind: Kind_CLASS, simpleName: 'DefaultListResponse', interfaces: []};
+  DefaultListResponse.prototype.component1 = function () {
+    return this.default;
+  };
+  DefaultListResponse.prototype.copy_w4vvqu$ = function (default_0) {
+    return new DefaultListResponse(default_0 === void 0 ? this.default : default_0);
+  };
+  DefaultListResponse.prototype.toString = function () {
+    return 'DefaultListResponse(default=' + Kotlin.toString(this.default) + ')';
+  };
+  DefaultListResponse.prototype.hashCode = function () {
+    var result = 0;
+    result = result * 31 + Kotlin.hashCode(this.default) | 0;
+    return result;
+  };
+  DefaultListResponse.prototype.equals = function (other) {
+    return this === other || (other !== null && (typeof other === 'object' && (Object.getPrototypeOf(this) === Object.getPrototypeOf(other) && Kotlin.equals(this.default, other.default))));
+  };
   function JikanAnime(mal_id, image_url, watching_status) {
     JikanAnime$Companion_getInstance();
     if (watching_status === void 0)
@@ -1930,11 +1656,7 @@ var animosaic = function (_, Kotlin, $module$kotlinx_serialization_kotlinx_seria
   JikanAnime$Companion.prototype.serializer = function () {
     return JikanAnime$$serializer_getInstance();
   };
-  JikanAnime$Companion.$metadata$ = {
-    kind: Kind_OBJECT,
-    simpleName: 'Companion',
-    interfaces: []
-  };
+  JikanAnime$Companion.$metadata$ = {kind: Kind_OBJECT, simpleName: 'Companion', interfaces: []};
   var JikanAnime$Companion_instance = null;
   function JikanAnime$Companion_getInstance() {
     if (JikanAnime$Companion_instance === null) {
@@ -1949,11 +1671,9 @@ var animosaic = function (_, Kotlin, $module$kotlinx_serialization_kotlinx_seria
     this.descriptor.addElement_ivxn3r$('watching_status', true);
     JikanAnime$$serializer_instance = this;
   }
-  Object.defineProperty(JikanAnime$$serializer.prototype, 'descriptor', {
-    get: function () {
-      return this.descriptor_rprue8$_0;
-    }
-  });
+  Object.defineProperty(JikanAnime$$serializer.prototype, 'descriptor', {get: function () {
+    return this.descriptor_rprue8$_0;
+  }});
   JikanAnime$$serializer.prototype.serialize_awe97i$ = function (encoder, obj) {
     var output = encoder.beginStructure_r0sa6z$(this.descriptor, []);
     output.encodeNullableSerializableElement_orpvvi$(this.descriptor, 0, internal.StringSerializer, obj.mal_id);
@@ -1965,9 +1685,7 @@ var animosaic = function (_, Kotlin, $module$kotlinx_serialization_kotlinx_seria
   JikanAnime$$serializer.prototype.deserialize_nts5qn$ = function (decoder) {
     var index, readAll = false;
     var bitMask0 = 0;
-    var local0
-    , local1
-    , local2;
+    var local0, local1, local2;
     var input = decoder.beginStructure_r0sa6z$(this.descriptor, []);
     loopLabel: while (true) {
       index = input.decodeElementIndex_qatsm0$(this.descriptor);
@@ -2000,11 +1718,7 @@ var animosaic = function (_, Kotlin, $module$kotlinx_serialization_kotlinx_seria
   JikanAnime$$serializer.prototype.childSerializers = function () {
     return [new NullableSerializer(internal.StringSerializer), new NullableSerializer(internal.StringSerializer), internal.IntSerializer];
   };
-  JikanAnime$$serializer.$metadata$ = {
-    kind: Kind_OBJECT,
-    simpleName: '$serializer',
-    interfaces: [GeneratedSerializer]
-  };
+  JikanAnime$$serializer.$metadata$ = {kind: Kind_OBJECT, simpleName: '$serializer', interfaces: [GeneratedSerializer]};
   var JikanAnime$$serializer_instance = null;
   function JikanAnime$$serializer_getInstance() {
     if (JikanAnime$$serializer_instance === null) {
@@ -2028,11 +1742,7 @@ var animosaic = function (_, Kotlin, $module$kotlinx_serialization_kotlinx_seria
       $this.watching_status = watching_status;
     return $this;
   }
-  JikanAnime.$metadata$ = {
-    kind: Kind_CLASS,
-    simpleName: 'JikanAnime',
-    interfaces: []
-  };
+  JikanAnime.$metadata$ = {kind: Kind_CLASS, simpleName: 'JikanAnime', interfaces: []};
   JikanAnime.prototype.component1 = function () {
     return this.mal_id;
   };
@@ -2069,11 +1779,7 @@ var animosaic = function (_, Kotlin, $module$kotlinx_serialization_kotlinx_seria
   Grid.prototype.get_vux9f0$ = function (a, b) {
     return this.map.get_11rb$(new Pair(a, b));
   };
-  Grid.$metadata$ = {
-    kind: Kind_CLASS,
-    simpleName: 'Grid',
-    interfaces: []
-  };
+  Grid.$metadata$ = {kind: Kind_CLASS, simpleName: 'Grid', interfaces: []};
   function Pixel(red, blue, green, alpha) {
     Pixel$Companion_getInstance();
     if (red === void 0)
@@ -2098,11 +1804,7 @@ var animosaic = function (_, Kotlin, $module$kotlinx_serialization_kotlinx_seria
   Pixel$Companion.prototype.serializer = function () {
     return Pixel$$serializer_getInstance();
   };
-  Pixel$Companion.$metadata$ = {
-    kind: Kind_OBJECT,
-    simpleName: 'Companion',
-    interfaces: []
-  };
+  Pixel$Companion.$metadata$ = {kind: Kind_OBJECT, simpleName: 'Companion', interfaces: []};
   var Pixel$Companion_instance = null;
   function Pixel$Companion_getInstance() {
     if (Pixel$Companion_instance === null) {
@@ -2118,11 +1820,9 @@ var animosaic = function (_, Kotlin, $module$kotlinx_serialization_kotlinx_seria
     this.descriptor.addElement_ivxn3r$('alpha', true);
     Pixel$$serializer_instance = this;
   }
-  Object.defineProperty(Pixel$$serializer.prototype, 'descriptor', {
-    get: function () {
-      return this.descriptor_cjx4wl$_0;
-    }
-  });
+  Object.defineProperty(Pixel$$serializer.prototype, 'descriptor', {get: function () {
+    return this.descriptor_cjx4wl$_0;
+  }});
   Pixel$$serializer.prototype.serialize_awe97i$ = function (encoder, obj) {
     var output = encoder.beginStructure_r0sa6z$(this.descriptor, []);
     if (!equals(obj.red, 0) || output.shouldEncodeElementDefault_3zr2iy$(this.descriptor, 0))
@@ -2138,10 +1838,7 @@ var animosaic = function (_, Kotlin, $module$kotlinx_serialization_kotlinx_seria
   Pixel$$serializer.prototype.deserialize_nts5qn$ = function (decoder) {
     var index, readAll = false;
     var bitMask0 = 0;
-    var local0
-    , local1
-    , local2
-    , local3;
+    var local0, local1, local2, local3;
     var input = decoder.beginStructure_r0sa6z$(this.descriptor, []);
     loopLabel: while (true) {
       index = input.decodeElementIndex_qatsm0$(this.descriptor);
@@ -2179,11 +1876,7 @@ var animosaic = function (_, Kotlin, $module$kotlinx_serialization_kotlinx_seria
   Pixel$$serializer.prototype.childSerializers = function () {
     return [internal.IntSerializer, internal.IntSerializer, internal.IntSerializer, internal.IntSerializer];
   };
-  Pixel$$serializer.$metadata$ = {
-    kind: Kind_OBJECT,
-    simpleName: '$serializer',
-    interfaces: [GeneratedSerializer]
-  };
+  Pixel$$serializer.$metadata$ = {kind: Kind_OBJECT, simpleName: '$serializer', interfaces: [GeneratedSerializer]};
   var Pixel$$serializer_instance = null;
   function Pixel$$serializer_getInstance() {
     if (Pixel$$serializer_instance === null) {
@@ -2211,11 +1904,7 @@ var animosaic = function (_, Kotlin, $module$kotlinx_serialization_kotlinx_seria
       $this.alpha = alpha;
     return $this;
   }
-  Pixel.$metadata$ = {
-    kind: Kind_CLASS,
-    simpleName: 'Pixel',
-    interfaces: []
-  };
+  Pixel.$metadata$ = {kind: Kind_CLASS, simpleName: 'Pixel', interfaces: []};
   Pixel.prototype.component1 = function () {
     return this.red;
   };
@@ -2275,11 +1964,7 @@ var animosaic = function (_, Kotlin, $module$kotlinx_serialization_kotlinx_seria
     }
     return subImage;
   };
-  TileImage.$metadata$ = {
-    kind: Kind_CLASS,
-    simpleName: 'TileImage',
-    interfaces: []
-  };
+  TileImage.$metadata$ = {kind: Kind_CLASS, simpleName: 'TileImage', interfaces: []};
   function Mosaic() {
     Mosaic_instance = this;
   }
@@ -2293,11 +1978,7 @@ var animosaic = function (_, Kotlin, $module$kotlinx_serialization_kotlinx_seria
     this.local$pixel = void 0;
     this.local$tile = tile_0;
   }
-  Coroutine$Mosaic$createMosaicFromTiles$lambda.$metadata$ = {
-    kind: Kotlin.Kind.CLASS,
-    simpleName: null,
-    interfaces: [CoroutineImpl]
-  };
+  Coroutine$Mosaic$createMosaicFromTiles$lambda.$metadata$ = {kind: Kotlin.Kind.CLASS, simpleName: null, interfaces: [CoroutineImpl]};
   Coroutine$Mosaic$createMosaicFromTiles$lambda.prototype = Object.create(CoroutineImpl.prototype);
   Coroutine$Mosaic$createMosaicFromTiles$lambda.prototype.constructor = Coroutine$Mosaic$createMosaicFromTiles$lambda;
   Coroutine$Mosaic$createMosaicFromTiles$lambda.prototype.doResume = function () {
@@ -2402,11 +2083,7 @@ var animosaic = function (_, Kotlin, $module$kotlinx_serialization_kotlinx_seria
     this.local$this$Mosaic = this$Mosaic_0;
     this.local$entry = entry_0;
   }
-  Coroutine$Mosaic$createMosaicFromTiles$lambda_0.$metadata$ = {
-    kind: Kotlin.Kind.CLASS,
-    simpleName: null,
-    interfaces: [CoroutineImpl]
-  };
+  Coroutine$Mosaic$createMosaicFromTiles$lambda_0.$metadata$ = {kind: Kotlin.Kind.CLASS, simpleName: null, interfaces: [CoroutineImpl]};
   Coroutine$Mosaic$createMosaicFromTiles$lambda_0.prototype = Object.create(CoroutineImpl.prototype);
   Coroutine$Mosaic$createMosaicFromTiles$lambda_0.prototype.constructor = Coroutine$Mosaic$createMosaicFromTiles$lambda_0;
   Coroutine$Mosaic$createMosaicFromTiles$lambda_0.prototype.doResume = function () {
@@ -2450,11 +2127,7 @@ var animosaic = function (_, Kotlin, $module$kotlinx_serialization_kotlinx_seria
     this.local$input = input_0;
     this.local$tiles = tiles_0;
   }
-  Coroutine$createMosaicFromTiles_7x6b9z$.$metadata$ = {
-    kind: Kotlin.Kind.CLASS,
-    simpleName: null,
-    interfaces: [CoroutineImpl]
-  };
+  Coroutine$createMosaicFromTiles_7x6b9z$.$metadata$ = {kind: Kotlin.Kind.CLASS, simpleName: null, interfaces: [CoroutineImpl]};
   Coroutine$createMosaicFromTiles_7x6b9z$.prototype = Object.create(CoroutineImpl.prototype);
   Coroutine$createMosaicFromTiles_7x6b9z$.prototype.constructor = Coroutine$createMosaicFromTiles_7x6b9z$;
   Coroutine$createMosaicFromTiles_7x6b9z$.prototype.doResume = function () {
@@ -2579,11 +2252,7 @@ var animosaic = function (_, Kotlin, $module$kotlinx_serialization_kotlinx_seria
      while (false);
     return (tmp$_0 = (tmp$ = maxBy$result) != null ? tmp$.second : null) != null ? tmp$_0 : new TileItem();
   };
-  Mosaic.$metadata$ = {
-    kind: Kind_OBJECT,
-    simpleName: 'Mosaic',
-    interfaces: []
-  };
+  Mosaic.$metadata$ = {kind: Kind_OBJECT, simpleName: 'Mosaic', interfaces: []};
   var Mosaic_instance = null;
   function Mosaic_getInstance() {
     if (Mosaic_instance === null) {
@@ -2596,11 +2265,7 @@ var animosaic = function (_, Kotlin, $module$kotlinx_serialization_kotlinx_seria
     this.exceptionState_0 = 1;
     this.local$it = it_0;
   }
-  Coroutine$toListList$lambda.$metadata$ = {
-    kind: Kotlin.Kind.CLASS,
-    simpleName: null,
-    interfaces: [CoroutineImpl]
-  };
+  Coroutine$toListList$lambda.$metadata$ = {kind: Kotlin.Kind.CLASS, simpleName: null, interfaces: [CoroutineImpl]};
   Coroutine$toListList$lambda.prototype = Object.create(CoroutineImpl.prototype);
   Coroutine$toListList$lambda.prototype.constructor = Coroutine$toListList$lambda;
   Coroutine$toListList$lambda.prototype.doResume = function () {
@@ -2649,11 +2314,7 @@ var animosaic = function (_, Kotlin, $module$kotlinx_serialization_kotlinx_seria
     this.exceptionState_0 = 1;
     this.local$$receiver = $receiver_0;
   }
-  Coroutine$toListList.$metadata$ = {
-    kind: Kotlin.Kind.CLASS,
-    simpleName: null,
-    interfaces: [CoroutineImpl]
-  };
+  Coroutine$toListList.$metadata$ = {kind: Kotlin.Kind.CLASS, simpleName: null, interfaces: [CoroutineImpl]};
   Coroutine$toListList.prototype = Object.create(CoroutineImpl.prototype);
   Coroutine$toListList.prototype.constructor = Coroutine$toListList;
   Coroutine$toListList.prototype.doResume = function () {
@@ -2780,110 +2441,52 @@ var animosaic = function (_, Kotlin, $module$kotlinx_serialization_kotlinx_seria
     else
       return instance.doResume(null);
   }
-  Object.defineProperty(_, 'Cache', {
-    get: Cache_getInstance
-  });
-  Object.defineProperty(_, 'inputImageCanvas', {
-    get: function () {
-      return inputImageCanvas;
-    },
-    set: function (value) {
-      inputImageCanvas = value;
-    }
-  });
+  Object.defineProperty(_, 'Cache', {get: Cache_getInstance});
   _.createMosaic = createMosaic;
   _.getLatest = getLatest;
   _.pmap_7en38t$ = pmap;
-  Object.defineProperty(TileItem, 'Companion', {
-    get: TileItem$Companion_getInstance
-  });
-  Object.defineProperty(TileItem, '$serializer', {
-    get: TileItem$$serializer_getInstance
-  });
+  Object.defineProperty(TileItem, 'Companion', {get: TileItem$Companion_getInstance});
+  Object.defineProperty(TileItem, '$serializer', {get: TileItem$$serializer_getInstance});
   _.TileItem_init_2u6d5w$ = TileItem_init;
   _.TileItem = TileItem;
-  Object.defineProperty(User, 'Companion', {
-    get: User$Companion_getInstance
-  });
-  Object.defineProperty(User, '$serializer', {
-    get: User$$serializer_getInstance
-  });
+  Object.defineProperty(User, 'Companion', {get: User$Companion_getInstance});
+  Object.defineProperty(User, '$serializer', {get: User$$serializer_getInstance});
   _.User_init_l12ir2$ = User_init;
   _.User = User;
-  Object.defineProperty(MosaicStatusResponse, 'Companion', {
-    get: MosaicStatusResponse$Companion_getInstance
-  });
-  Object.defineProperty(MosaicStatusResponse, '$serializer', {
-    get: MosaicStatusResponse$$serializer_getInstance
-  });
+  Object.defineProperty(MosaicStatusResponse, 'Companion', {get: MosaicStatusResponse$Companion_getInstance});
+  Object.defineProperty(MosaicStatusResponse, '$serializer', {get: MosaicStatusResponse$$serializer_getInstance});
   _.MosaicStatusResponse_init_41bcum$ = MosaicStatusResponse_init;
   _.MosaicStatusResponse = MosaicStatusResponse;
-  Object.defineProperty(MosaicStatus, 'LOADING_USER_DATA', {
-    get: MosaicStatus$LOADING_USER_DATA_getInstance
-  });
-  Object.defineProperty(MosaicStatus, 'CREATING_MOSAIC', {
-    get: MosaicStatus$CREATING_MOSAIC_getInstance
-  });
-  Object.defineProperty(MosaicStatus, 'COMPLETE', {
-    get: MosaicStatus$COMPLETE_getInstance
-  });
-  Object.defineProperty(MosaicStatus, 'Companion', {
-    get: MosaicStatus$Companion_getInstance
-  });
-  Object.defineProperty(MosaicStatus, '$serializer', {
-    get: MosaicStatus$$serializer_getInstance
-  });
+  Object.defineProperty(MosaicStatus, 'LOADING_USER_DATA', {get: MosaicStatus$LOADING_USER_DATA_getInstance});
+  Object.defineProperty(MosaicStatus, 'CREATING_MOSAIC', {get: MosaicStatus$CREATING_MOSAIC_getInstance});
+  Object.defineProperty(MosaicStatus, 'COMPLETE', {get: MosaicStatus$COMPLETE_getInstance});
+  Object.defineProperty(MosaicStatus, 'Companion', {get: MosaicStatus$Companion_getInstance});
+  Object.defineProperty(MosaicStatus, '$serializer', {get: MosaicStatus$$serializer_getInstance});
   _.MosaicStatus = MosaicStatus;
-  Object.defineProperty(UserStatus, 'LOADING_USER_DATA', {
-    get: UserStatus$LOADING_USER_DATA_getInstance
-  });
-  Object.defineProperty(UserStatus, 'COMPLETE', {
-    get: UserStatus$COMPLETE_getInstance
-  });
-  Object.defineProperty(UserStatus, 'Companion', {
-    get: UserStatus$Companion_getInstance
-  });
-  Object.defineProperty(UserStatus, '$serializer', {
-    get: UserStatus$$serializer_getInstance
-  });
+  Object.defineProperty(UserStatus, 'LOADING_USER_DATA', {get: UserStatus$LOADING_USER_DATA_getInstance});
+  Object.defineProperty(UserStatus, 'COMPLETE', {get: UserStatus$COMPLETE_getInstance});
+  Object.defineProperty(UserStatus, 'Companion', {get: UserStatus$Companion_getInstance});
+  Object.defineProperty(UserStatus, '$serializer', {get: UserStatus$$serializer_getInstance});
   _.UserStatus = UserStatus;
-  Object.defineProperty(JikanListResponse, 'Companion', {
-    get: JikanListResponse$Companion_getInstance
-  });
-  Object.defineProperty(JikanListResponse, '$serializer', {
-    get: JikanListResponse$$serializer_getInstance
-  });
+  Object.defineProperty(JikanListResponse, 'Companion', {get: JikanListResponse$Companion_getInstance});
+  Object.defineProperty(JikanListResponse, '$serializer', {get: JikanListResponse$$serializer_getInstance});
   _.JikanListResponse_init_iumm75$ = JikanListResponse_init;
   _.JikanListResponse = JikanListResponse;
-  Object.defineProperty(JikanAnime, 'Companion', {
-    get: JikanAnime$Companion_getInstance
-  });
-  Object.defineProperty(JikanAnime, '$serializer', {
-    get: JikanAnime$$serializer_getInstance
-  });
+  Object.defineProperty(DefaultListResponse, 'Companion', {get: DefaultListResponse$Companion_getInstance});
+  Object.defineProperty(DefaultListResponse, '$serializer', {get: DefaultListResponse$$serializer_getInstance});
+  _.DefaultListResponse_init_efj891$ = DefaultListResponse_init;
+  _.DefaultListResponse = DefaultListResponse;
+  Object.defineProperty(JikanAnime, 'Companion', {get: JikanAnime$Companion_getInstance});
+  Object.defineProperty(JikanAnime, '$serializer', {get: JikanAnime$$serializer_getInstance});
   _.JikanAnime_init_lcsqw6$ = JikanAnime_init;
   _.JikanAnime = JikanAnime;
   _.Grid = Grid;
-  Object.defineProperty(Pixel, 'Companion', {
-    get: Pixel$Companion_getInstance
-  });
-  Object.defineProperty(Pixel, '$serializer', {
-    get: Pixel$$serializer_getInstance
-  });
+  Object.defineProperty(Pixel, 'Companion', {get: Pixel$Companion_getInstance});
+  Object.defineProperty(Pixel, '$serializer', {get: Pixel$$serializer_getInstance});
   _.Pixel_init_qbyruk$ = Pixel_init;
   _.Pixel = Pixel;
-  Object.defineProperty(_, 'pixelDataBlah', {
-    get: function () {
-      return pixelDataBlah;
-    },
-    set: function (value) {
-      pixelDataBlah = value;
-    }
-  });
   _.TileImage = TileImage;
-  Object.defineProperty(_, 'Mosaic', {
-    get: Mosaic_getInstance
-  });
+  Object.defineProperty(_, 'Mosaic', {get: Mosaic_getInstance});
   Cache$CacheItem$$serializer.prototype.patch_mynpiu$ = GeneratedSerializer.prototype.patch_mynpiu$;
   Cache$UserMap$$serializer.prototype.patch_mynpiu$ = GeneratedSerializer.prototype.patch_mynpiu$;
   Cache$ImageMap$$serializer.prototype.patch_mynpiu$ = GeneratedSerializer.prototype.patch_mynpiu$;
@@ -2893,11 +2496,13 @@ var animosaic = function (_, Kotlin, $module$kotlinx_serialization_kotlinx_seria
   MosaicStatus$$serializer.prototype.patch_mynpiu$ = GeneratedSerializer.prototype.patch_mynpiu$;
   UserStatus$$serializer.prototype.patch_mynpiu$ = GeneratedSerializer.prototype.patch_mynpiu$;
   JikanListResponse$$serializer.prototype.patch_mynpiu$ = GeneratedSerializer.prototype.patch_mynpiu$;
+  DefaultListResponse$$serializer.prototype.patch_mynpiu$ = GeneratedSerializer.prototype.patch_mynpiu$;
   JikanAnime$$serializer.prototype.patch_mynpiu$ = GeneratedSerializer.prototype.patch_mynpiu$;
   Pixel$$serializer.prototype.patch_mynpiu$ = GeneratedSerializer.prototype.patch_mynpiu$;
   latestMosaic = null;
   inputImageCanvas = null;
   pixelDataBlah = null;
-  Kotlin.defineModule('animosaic', _);
   return _;
 }(typeof animosaic === 'undefined' ? {} : animosaic, kotlin, this['kotlinx-serialization-kotlinx-serialization-runtime'], this['kotlinx-coroutines-core']);
+
+//# sourceMappingURL=animosaic.js.map

@@ -5,20 +5,28 @@
     -o-user-select:none;
     user-select:none
 }
+
  #slider-horizontal{
     width:50vw;
-    min-width:400px;
+    min-width:200px;
 }
 
 html {
 	height: 100%;
-    background:#000;
     overflow: hidden;
 }
 .animosaic-content {
 	height: 100%;
     background:#03a9f4;
     overflow: hidden;
+    z-index: 1;
+}
+
+.duplicate {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    z-index: -1;
 }
 
 .mosaic-tile{
@@ -31,7 +39,7 @@ html {
 }
 
 .animosaic-mosaic-controls {
-	margin-top: 3vh;
+	margin-top: 8vh;
 	margin-bottom: 3vh;
 	margin-left: 3vw;
 	margin-right: 3vw;
@@ -48,49 +56,123 @@ html {
     justify-content: center;
 }
 
+.animosaic-prompt-overlay {
+    width:100vw;
+    height:100vh;
+    background: rgba(0,122,193,.67);
+    position: absolute;
+    display:none;
+    top: 0vw;
+    left: 0vh;
+    z-index:10;
+}
+
 .animosaic-prompt {
     background:#FFF;
     border-radius: 20px;
-    width:auto;
-    height:auto;
-    max-width: 90%;
-    max-height: 80%;
+    max-width: 94%;
+    max-height: 88%;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
+    z-index:12;
 
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: flex;
-    overflow: hidden;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-	min-width: 450px;
+    padding:25px;
+    grid-gap: 25px;
+    display: grid;
+    overflow: scroll;
+    width: min-content;
+
+    grid-template-columns: 1fr;
+}
+
+.animosaic-prompt-image {
+    width: 100%;
+    align-items:center;
+}
+
+.animosaic-prompt-image img {
+    border-radius: 10px;
+    max-width: 200px;
+
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+
+.animosaic-form {
+    align-items:center;
+    width: 100%;
+    min-width: 50vw;
+}
+
+@media only screen and (max-width: 450px) {
+    .animosaic-form {
+        align-items:center;
+        width: 100%;
+        min-width: 75vw;
+    }
+
+    .animosaic-prompt-image img {
+        border-radius: 10px;
+        max-width: 110px;
+    }
+
+    .animosaic-form p {
+        font-size: 12px;
+    }
+}
+
+@media only screen and (min-width: 965px) {
+    .animosaic-prompt {
+        grid-template-columns: minmax(400px, 1fr) auto;
+    }
+
+    .animosaic-prompt-image {
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .animosaic-prompt-image img {
+        border-radius: 10px;
+        max-width: 100%;
+    }
+
+    .animosaic-form {
+        align-items:left;
+        width: 50%;
+        min-width: 400px;
+    }
+
+    .animosaic-form input {
+    	min-width: 350px;
+    }
+
+    .animosaic-button,
+    .animosaic-form-file-input + label {
+    	min-width: 350px;
+    }
+
+     #slider-horizontal{
+        min-width:400px;
+    }
 }
 
 .bottom-control {
     width:94vw;
     position: absolute;
-    top: 88vh;
+    top: 80vh;
     left: 0%;
     margin-left :3vw;
     margin-right:3vw;
     display:none;
 }
 
-.animosaic-form {
-    align-items:left;
-    width: 50%;
-	min-width: 400px;
-	margin: 25px;
-}
-
 .control-row {
-    width: 100%;
+    width: auto;
     height: auto;
     display: flex;
     justify-content: center;
@@ -123,16 +205,39 @@ html {
     align-items: center;
     padding: 20px;
     max-height: 5vh;
+    z-index: 11;
+}
+
+.modal-header {
+	background-color:#007ac1;
+	color:#ffffff;
+	font-family:Arial;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-title {
+    text-align: center
 }
 
 
 .rowholder {
 	min-width: 450px;
+	max-height: 70vh;
+	overflow-x: auto;
+	overflow-y: auto;
 }
 
 .animosaic-footer {
     position: absolute;
     bottom: 0%;
+    left: 0%;
+}
+
+.animosaic-header {
+    position: absolute;
+    top: 0%;
     left: 0%;
 }
 
@@ -149,7 +254,7 @@ h1, h4, p {
 	color:#ffffff;
 }
 
-.animosaic-form input {
+.animosaic-form-form input {
     width: 100%;
 	font-size:15px;
     margin-bottom: 20px;
@@ -157,7 +262,6 @@ h1, h4, p {
 	font-family:Arial;
 	border-radius:3px;
 	border:1px solid #03a9f4;
-	min-width: 350px;
 	text-align:center;
 }
 
@@ -176,17 +280,6 @@ h1, h4, p {
     margin-bottom: 20px;
 }
 
-.animosaic-prompt-image {
-    width: 100%;
-	max-width: 400px;
-	margin: 25px;
-}
-
-.animosaic-prompt-image img {
-    border-radius: 10px;
-    max-width: 100%;
-}
-
 .animosaic-button,
 .animosaic-form-file-input + label {
     width: 100%;
@@ -201,13 +294,27 @@ h1, h4, p {
 	font-size:15px;
 	padding:9px 23px;
 	text-decoration:none;
-	min-width: 250px;
 }
-.animosaic-button:hover, .animosaic-form-file-input + label:hover {
+.animosaic-button:hover, .animosaic-form-file-input + label:hover, .animosaic-control-button:hover {
 	background-color:#0688fa;
+	color:#ffffff;
 }
-.animosaic-button:active, .animosaic-form-file-input + label:active{
+.animosaic-button:active, .animosaic-form-file-input + label:active, .animosaic-control-button:active {
 	position:relative;
 	top:1px;
 }
 
+.animosaic-control-button {
+	background-color:#fff;
+	border-radius:3px;
+	border:1px solid #0688fa;
+    text-align: center;
+	cursor:pointer;
+	font-family:Arial;
+	font-size:15px;
+	padding:9px 23px;
+	text-decoration:none;
+	min-width: 120px;
+	margin-left: 13px;
+	margin-right: 13px;
+}
