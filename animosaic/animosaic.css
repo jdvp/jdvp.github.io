@@ -81,7 +81,6 @@ html {
     padding:25px;
     grid-gap: 25px;
     display: grid;
-    overflow: scroll;
     width: min-content;
 
     grid-template-columns: 1fr;
