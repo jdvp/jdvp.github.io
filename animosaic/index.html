@@ -4,15 +4,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>animosaic</title>
         <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
-        <link rel="icon" href="./favicon.ico" type="image/x-icon">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <link rel="stylesheet" href="css/animosaic.css">
-        <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.css"/>
-        <script src=https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js></script>
-        <script src=https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
         <script src="animosaic.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
         <!-- Global site tag (gtag.js) - Google Analytics -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-65831716-6"></script>
         <script>
@@ -46,8 +39,8 @@
                             the anime list you are checking has a lot of anime for the best results!
                         </p>
                     </div>
-                    <form class="animosaic-form-form" onsubmit="animosaic.createMosaic(); $('.animosaic-prompt').hide(); $('.animosaic-prompt-overlay').hide(); return false" autocomplete="off">
-                        <input type="text" id="usernameInput" placeholder="MyAnimeList Username" required/>
+                    <form class="animosaic-form-form" onsubmit=" $('.animosaic-prompt').hide(); $('.animosaic-prompt-overlay').hide(); animosaic.createMosaic(); return false" autocomplete="off">
+                        <input type="text" id="usernameInput" placeholder="MyAnimeList Username (not required)"/>
                         <br>
                         <input class="animosaic-form-file-input" type="file" id="imageInput" accept="image/*" required>
                         <label for="imageInput">Choose an image</label>
@@ -103,12 +96,25 @@
                                     that some mobile browsers might not work well with even that limit.
                                 </p>
                             </div>
-                            <form class="animosaic-form-form" onsubmit="printImage(); $('#myModal').modal('hide'); return false" autocomplete="off">
+                            <form class="animosaic-form-form" onsubmit="$('#myModal').modal('hide'); printImage(); return false" autocomplete="off">
                                 <input type="number" id="width-input" placeholder="Desired width" min="0" max="8192" required/>
                                 <br>
                                 <button class="animosaic-button" type="submit">Export</button>
                             </form>
 
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="modal fade" id="loadingModal">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <div class="spinner-border text-primary"></div>
+                            <p id="loadingModalText"></p>
                         </div>
                     </div>
                 </div>
