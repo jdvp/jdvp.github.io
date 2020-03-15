@@ -36,6 +36,16 @@
                         <section class="last">
                             <h2>Notification Launcher Release Notes</h2>
                             <p>Release notes for the Notification Launcher app found on Google Play : <a href="https://play.google.com/store/apps/details?id=me.jdvp.notificationlauncher" target="_blank">Notification Launcher</a></p>
+                                <b>2.4.0</b>
+                                <br>March 15, 2020
+                                <li>Added a Launch Screen that shows instead of the initial blank-white screen that shows for a second at app start-up.</li> 
+                                <li>Speeds up the time that is required for the app list to be loaded on the main screen. Ideally, now the loader should not be shown except in circumstances where multiple hundreds of apps are installed.</li> 
+                                <li>Updated ProGuard Obfuscation Rules to decrease app size. 2.15MB -> 1.77MB</li> 
+                                <li>Chore : Updated dependencies to ingest any fixes they had made.</li> 
+                                <li>Fixed an obscure crash that never seemed to happen to anyone other than me (didn't see it in the prod logs).</li> 
+                                <li>Adds a fade to replace the jarring transition when changing to/from the dark theme.</li>
+                                <br>
+                                <br>
                                 <b>2.3.0</b>
                                 <br>April 10, 2019 
                                 <li>Adds the ability to hide apps on the main screen (and unhide them in the settings menu).</li>
@@ -43,6 +53,8 @@
                                 <li>Sped up start-up time. This is a by-product of the changes I made for the above item.</li>
                                 <li>Fixed crash seen when using an alarm for a deleted app. I didn't see any reports from this on user devices other than my own.</li>
                                 <li>Fixed issue with Quick Notifications not actually using the correct amount of time. When creating Quick Notifications, the first time worked properly but every time after would use one-step down for the time unit (e.g. a 4 hour Quick Notification would become a 4 minute one). This is fixed but old QNs created before this update will need to be deleted in order to fix the behavior.</li>
+                                <br>
+                                <br>
                                 <b>2.2.0 & 2.2.1</b>
                                 <br>March 16, 2019 
                                 <li>Adds the ability to group notifications by app in the "Past" and "Scheduled" notifications pages</li>
