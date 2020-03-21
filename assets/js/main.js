@@ -53,10 +53,19 @@
 	// Footer.
 		breakpoints.on('<=medium', function() {
 			$footer.insertAfter($main);
+
+            var bgArray = ["bg.png", "bg2.png", "bg3.png", "bg4.png"];
+            var bg = bgArray[Math.floor(Math.random() * bgArray.length)];
+            $('#header, #footer').css("background-image", "url('images/overlay.png'), url('images/" + bg + "')")
 		});
 
 		breakpoints.on('>medium', function() {
 			$footer.appendTo($header);
+
+            var bgArray = ["bg.png", "bg2.png", "bg3.png", "bg4.png"];
+            var bg = bgArray[Math.floor(Math.random() * bgArray.length)];
+            $('#header').css("background-image", "url('images/overlay.png'), url('images/" + bg + "')")
+            $("#footer").css("background-image", "none");
 		});
 
 	// Header.
@@ -92,5 +101,4 @@
 				});
 
 			}
-
 })(jQuery);
