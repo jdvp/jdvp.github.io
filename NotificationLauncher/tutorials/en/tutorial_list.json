@@ -29,11 +29,11 @@
       },
       {
         "message": "You will be directed to the scheduled notifications page. Pick an item you want to change and tap \"Edit\"",
-        "imageUrl": "tutorials/en/edit/2.png"
+        "imageUrl": "tutorials/en/edit/1.png"
       },
       {
         "message": "You will land on the notification scheduling page with the existing info pre-populated. Make any changes you want and click \"Reschedule Notification\" to overwrite the existing notification.",
-        "imageUrl": "tutorials/en/edit/3.png"
+        "imageUrl": "tutorials/en/edit/2.png"
       }
     ]
   },
