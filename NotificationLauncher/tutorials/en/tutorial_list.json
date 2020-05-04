@@ -4,19 +4,19 @@
     "pageList": [
       {
         "message": "On the main screen, select an app for which you would like to schedule a notification",
-        "imageUrl": "img/schedule/0.png"
+        "imageUrl": "tutorials/en/schedule/0.png"
       },
       {
         "message": "Fill out any details about the notification including message content and time. Click \"Fire Notification\" when you are done.",
-        "imageUrl": "img/schedule/1.png"
+        "imageUrl": "tutorials/en/schedule/1.png"
       },
       {
         "message": "When the scheduled time comes, you will recieve the notification.",
-        "imageUrl": "img/schedule/2.png"
+        "imageUrl": "tutorials/en/schedule/2.png"
       },
       {
         "message": "Tapping the notification will open the app you had previously selected.",
-        "imageUrl": "img/schedule/3.png"
+        "imageUrl": "tutorials/en/schedule/3.png"
       }
     ]
   },
@@ -24,20 +24,16 @@
     "title": "Edit an existing scheduled notification",
     "pageList": [
       {
-        "message": "On the home screen, tap the menu button. This is located in the bottom right corner of the screen and has a plus symbol on it.",
-        "imageUrl": "img/edit/0.png"
-      },
-      {
-        "message": "When a notification has been scheduled, the \"Upcoming Notifications\" option will appear. Tap this option.",
-        "imageUrl": "img/edit/1.png"
+        "message": "On the home screen, select the \"Upcoming\" option from the Bottom Navigation Bar.",
+        "imageUrl": "tutorials/en/edit/0.png"
       },
       {
         "message": "You will be directed to the scheduled notifications page. Pick an item you want to change and tap \"Edit\"",
-        "imageUrl": "img/edit/2.png"
+        "imageUrl": "tutorials/en/edit/2.png"
       },
       {
-        "message": "You will be directed to the notification scheduling page with the existing info pre-populated. Make any changes you want and click \"Reschedule Notification\" to overwrite the existing notification.",
-        "imageUrl": "img/edit/3.png"
+        "message": "You will land on the notification scheduling page with the existing info pre-populated. Make any changes you want and click \"Reschedule Notification\" to overwrite the existing notification.",
+        "imageUrl": "tutorials/en/edit/3.png"
       }
     ]
   },
@@ -46,27 +42,27 @@
     "pageList": [
       {
         "message": "Notifications can be scheduled using content shared from other applications.",
-        "imageUrl": "img/share/0.png"
+        "imageUrl": "tutorials/en/share/0.png"
       },
       {
         "message": "In another app, find something you would like to share and click the share action within that application.",
-        "imageUrl": "img/share/1.png"
+        "imageUrl": "tutorials/en/share/1.png"
       },
       {
         "message": "when the share sheet pops up from the bottom, select \"Notification Launcher\".",
-        "imageUrl": "img/share/2.png"
+        "imageUrl": "tutorials/en/share/2.png"
       },
       {
         "message": "Change any details you would like, such as timing, on the details page, then click \"Fire Notification\".",
-        "imageUrl": "img/share/3.png"
+        "imageUrl": "tutorials/en/share/3.png"
       },
       {
         "message": "when the time comes, you will get the desired notification. If the notification contains a URL, the app will parse it and take you to the corresponding app.",
-        "imageUrl": "img/share/4.png"
+        "imageUrl": "tutorials/en/share/4.png"
       },
       {
         "message": " For instance, items shared from the Play Store will open the Play Store app directly to the shared content when the notification is clicked.",
-        "imageUrl": "img/share/5.png"
+        "imageUrl": "tutorials/en/share/5.png"
       }
     ]
   },
@@ -75,19 +71,19 @@
     "pageList": [
       {
         "message": "When scheduling a \"relative\" notification, you'll see an checkbox to \"Create a quick notification option\". Checking this will create a Quick Notication when you schedule the notification.",
-        "imageUrl": "img/qn/add/0.png"
+        "imageUrl": "tutorials/en/qn/add/0.png"
       },
       {
         "message": "Quick notifications will be shown on the main screen in a collapsable header. Clicking a quick notification will schedule a copy of the original notification that you had created.",
-        "imageUrl": "img/qn/add/1.png"
+        "imageUrl": "tutorials/en/qn/add/1.png"
       },
       {
         "message": "On Android 7.1 and above, Quick Notifications will also be shown in the list of app shortcuts. Note that only the 3 most-recent Quick Notifications will show up in the list.",
-        "imageUrl": "img/qn/add/2.png"
+        "imageUrl": "tutorials/en/qn/add/2.png"
       },
       {
         "message": "App shortcuts can also be pinned. If pinned, you can delete the Quick Notification in the app without deleting the pinned item.",
-        "imageUrl": "img/qn/add/3.png"
+        "imageUrl": "tutorials/en/qn/add/3.png"
       }
     ]
   },
@@ -96,15 +92,15 @@
     "pageList": [
       {
         "message": "If you have created a Quick Notifications, you will see them on the app list screen under the collapsable Quick Notifications section.",
-        "imageUrl": "img/qn/delete/0.png"
+        "imageUrl": "tutorials/en/qn/delete/0.png"
       },
       {
         "message": "Long pressing the Quick Notification that you want to delete will remove it. A message at the bottom of the screen will allow you to do undo the action for a few seconds if it was a mistake",
-        "imageUrl": "img/qn/delete/1.png"
+        "imageUrl": "tutorials/en/qn/delete/1.png"
       },
       {
         "message": "For Android 7.1 and above, any pinned quick notification (such as the one shown in the image) will not be deleted automatically since they are handled by the operating system and have to be deleted manually.",
-        "imageUrl": "img/qn/delete/2.png"
+        "imageUrl": "tutorials/en/qn/delete/2.png"
       }
     ]
   }
