@@ -4173,7 +4173,7 @@ input, select, textarea {
     		#banner .content {
     			position: relative;
     			display: inline-block;
-    			padding: 1.85em 0.5em 3.25em 0.5em;
+    			padding: 2.25vh 0.5em 4.5vh 0.5em;
     			background: #ffffff;
     			border-radius: 0.75em;
     			z-index: 1;
@@ -4183,11 +4183,11 @@ input, select, textarea {
     				content: '';
     				display: block;
     				position: absolute;
-    				top: 0.75em;
+    				top: 0.75vh;
     				left: 50%;
-    				width: 2.5em;
+    				width: 8.5vh;
     				height: 0.4em;
-    				margin-left: -1.25em;
+    				margin-left: -4.25vh;
     				border-radius: 1em;
     				background: transparent;
     				box-shadow: inset 0 0 0 2px #e6e8eb;
@@ -4197,11 +4197,11 @@ input, select, textarea {
     				content: '';
     				display: block;
     				position: absolute;
-    				bottom: 0.7em;
+    				bottom: 0.75vh;
     				left: 50%;
-    				width: 1.85em;
-    				height: 1.85em;
-    				margin-left: -1em;
+    				width: 3vh;
+    				height: 3vh;
+    				margin-left: -1.5vh;
     				border-radius: 100%;
     				background: transparent;
     				box-shadow: inset 0 0 0 2px #e6e8eb;
@@ -4212,8 +4212,8 @@ input, select, textarea {
     			padding: 0;
     			position: relative;
     			white-space: nowrap;
-    			width: 11.25em;
-    			height: 20em;
+    			width: 22.5vh;
+    			height: 40vh;
     		}
 
     			#banner ul:after {
@@ -4250,8 +4250,8 @@ input, select, textarea {
 
     				#banner ul li img {
     					display: block;
-    					width: 11.25em;
-    					height: 20em;
+    					width: 22.5vh;
+    					height: 40vh;
     				}
 
     				#banner ul li.visible {
@@ -4269,17 +4269,31 @@ input, select, textarea {
     			}
 
     				#banner .content {
-    					padding: 1.5em 0.35em 3em 0.35em;
+    					padding: 4vw 0.3em 8vw 0.3em;
     				}
 
+    					#banner .content:before {
+    						top: 1.33vw;
+    						width: 15vw;
+    						height: .75vw;
+    						margin-left: -7.5vw;
+    					}
+
+    					#banner .content:after {
+    						bottom: 1.33vw;
+    						width: 5.33vw;
+    						height: 5.33vw;
+    						margin-left: -2.665vw;
+    					}
+
     				#banner ul {
-    					width: 10.125em;
-    					height: 18em;
+    					width: 40vw;
+    					height: 72vw;
     				}
 
     					#banner ul li img {
-    						width: 10.125em;
-    						height: 18em;
+    						width: 40vw;
+    						height: 72vw;
     					}
 
     		}
@@ -4295,31 +4309,31 @@ input, select, textarea {
     			}
 
     				#banner .content {
-    					padding: 1em 0.3em 2em 0.3em;
+    					padding: 6vw 0.3em 12vw 0.3em;
     				}
 
     					#banner .content:before {
-    						top: 0.385em;
-    						width: 2em;
-    						height: 0.35em;
-    						margin-left: -1em;
+    						top: 2vw;
+    						width: 20vw;
+    						height: 1.5vw;
+    						margin-left: -10vw;
     					}
 
     					#banner .content:after {
-    						bottom: 0.375em;
-    						width: 1.25em;
-    						height: 1.25em;
-    						margin-left: -0.625em;
+    						bottom: 2vw;
+    						width: 8vw;
+    						height: 8vw;
+    						margin-left: -4vw;
     					}
 
     				#banner ul {
-    					width: 8.4375em;
-    					height: 15em;
+    					width: 60vw;
+    					height: 106vw;
     				}
 
     					#banner ul li img {
-    						width: 8.4375em;
-    						height: 15em;
+    						width: 60vw;
+    						height: 106vw;
     					}
 
     		}
@@ -4328,14 +4342,6 @@ input, select, textarea {
 
     			#banner {
     				padding: 1.5em 0;
-    			}
-
-    		}
-
-    		@media screen and (orientation: portrait) {
-
-    			#banner {
-    				width: 100%;
     			}
 
     		}
