@@ -103,5 +103,42 @@
         "imageUrl": "tutorials/en/qn/delete/2.png"
       }
     ]
-  }
+  },
+  {
+  "title": "Using Custom Themes",
+  "pageList": [
+    {
+      "message": "Use Custom Themes to set custom colors for screen elements such as header. A video demo can be seen <a href=\"https://youtu.be/09d8SvaCs_0\">on YouTube</a>.",
+      "imageUrl": "tutorials/en/customtheme/6.png"
+    },
+    {
+      "message": "To get to the feature, go to the Settings tab and choose \"Configure Custom Theme\"",
+      "imageUrl": "tutorials/en/customtheme/0.png"
+    },
+    {
+      "message": "Custom Themes are a paid feature, so take a look around first. If you decide to purchase the functionality, tap the \"Purchase Custom Theme Support\" button.",
+      "imageUrl": "tutorials/en/customtheme/1.png"
+    },
+    {
+      "message": "After purchasing, you can change colors of screen elements. To find out more info about any item, long press the color name in the left hand column.",
+      "imageUrl": "tutorials/en/customtheme/2.png"
+    },
+    {
+      "message": "When you decide to change a color, tap the circle that you want to change. A color picker dialog will appear to let you select a color.",
+      "imageUrl": "tutorials/en/customtheme/3.png"
+    },
+    {
+      "message": "Once you have finished updating the theme, select it from the Spinner at the bottom of the page. Custom Light and Dark are the themes with your custom colors.",
+      "imageUrl": "tutorials/en/customtheme/4.png"
+    },
+    {
+      "message": "Finally, tap the \"Save & Apply\" button.",
+      "imageUrl": "tutorials/en/customtheme/5.png"
+    },
+    {
+      "message": "Your custom theme will be applied at this point! Have fun creating new themes!",
+      "imageUrl": "tutorials/en/customtheme/6.png"
+    }
+  ]
+}
 ]
