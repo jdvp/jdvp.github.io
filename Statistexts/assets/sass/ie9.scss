@@ -13,15 +13,15 @@
 	.main {
 		> .content {
 			&.style1 {
-				background: url('images/bgtr.svg') top right no-repeat, url('images/bgbl.svg') bottom left no-repeat, url('images/bgbl.svg') bottom left no-repeat, url('images/overlay.png'), url('images/ie/content-style1.svg');
+				background: url('images/bgtr.svg') top right no-repeat, url('images/bgbl.svg') bottom left no-repeat, url('images/bgbl.svg') bottom left no-repeat, url('images/overlay.webp'), url('images/ie/content-style1.svg');
 			}
 
 			&.style2 {
-				background: url('images/bgtr.svg') top right no-repeat, url('images/bgbl.svg') bottom left no-repeat, url('images/bgbl.svg') bottom left no-repeat, url('images/overlay.png'), url('images/ie/content-style2.svg');
+				background: url('images/bgtr.svg') top right no-repeat, url('images/bgbl.svg') bottom left no-repeat, url('images/bgbl.svg') bottom left no-repeat, url('images/overlay.webp'), url('images/ie/content-style2.svg');
 			}
 
 			&.style3 {
-				background: url('images/bgtr.svg') top right no-repeat, url('images/bgbl.svg') bottom left no-repeat, url('images/bgbl.svg') bottom left no-repeat, url('images/overlay.png'), url('images/ie/content-style3.svg');
+				background: url('images/bgtr.svg') top right no-repeat, url('images/bgbl.svg') bottom left no-repeat, url('images/bgbl.svg') bottom left no-repeat, url('images/overlay.webp'), url('images/ie/content-style3.svg');
 			}
 		}
 	}

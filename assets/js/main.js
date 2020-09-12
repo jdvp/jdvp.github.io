@@ -53,20 +53,20 @@
 	// Footer.
 		breakpoints.on('<=medium', function() {
 			$footer.insertAfter($main);
-            if (!$('#header').css("background-image").includes("png")) {
-                var bgArray = ["bg.png", "bg2.png", "bg3.png", "bg4.png"];
+            if (!$('#header').css("background-image").includes("webp")) {
+                var bgArray = ["bg.webp", "bg2.webp", "bg3.webp", "bg4.webp"];
                 var bg = bgArray[Math.floor(Math.random() * bgArray.length)];
-                $('#header, #footer').css("background-image", "url('images/overlay.png'), url('images/" + bg + "')")
+                $('#header, #footer').css("background-image", "url('images/overlay.webp'), url('images/" + bg + "')")
             }
 		});
 
 		breakpoints.on('>medium', function() {
 			$footer.appendTo($header);
 
-            if (!$('#header').css("background-image").includes("png")) {
-                var bgArray = ["bg.png", "bg2.png", "bg3.png", "bg4.png"];
+            if (!$('#header').css("background-image").includes("webp")) {
+                var bgArray = ["bg.webp", "bg2.webp", "bg3.webp", "bg4.webp"];
                 var bg = bgArray[Math.floor(Math.random() * bgArray.length)];
-                $('#header').css("background-image", "url('images/overlay.png'), url('images/" + bg + "')")
+                $('#header').css("background-image", "url('images/overlay.webp'), url('images/" + bg + "')")
             }
             $("#footer").css("background-image", "none");
 		});

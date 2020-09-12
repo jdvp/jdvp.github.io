@@ -15,11 +15,11 @@
 	body
 	{
 		background-color:		#f7f7f7;
-		background-image:		-moz-linear-gradient(top, rgba(0,0,0,0.05), rgba(0,0,0,0)),		url('images/bg01.png');
-		background-image:		-webkit-linear-gradient(top, rgba(0,0,0,0.05), rgba(0,0,0,0)),	url('images/bg01.png');
-		background-image:		-o-linear-gradient(top, rgba(0,0,0,0.05), rgba(0,0,0,0)),		url('images/bg01.png');
-		background-image:		-ms-linear-gradient(top, rgba(0,0,0,0.05), rgba(0,0,0,0)),		url('images/bg01.png');
-		background-image:		linear-gradient(top, rgba(0,0,0,0.05), rgba(0,0,0,0)),			url('images/bg01.png');
+		background-image:		-moz-linear-gradient(top, rgba(0,0,0,0.05), rgba(0,0,0,0)),		url('images/bg01.webp');
+		background-image:		-webkit-linear-gradient(top, rgba(0,0,0,0.05), rgba(0,0,0,0)),	url('images/bg01.webp');
+		background-image:		-o-linear-gradient(top, rgba(0,0,0,0.05), rgba(0,0,0,0)),		url('images/bg01.webp');
+		background-image:		-ms-linear-gradient(top, rgba(0,0,0,0.05), rgba(0,0,0,0)),		url('images/bg01.webp');
+		background-image:		linear-gradient(top, rgba(0,0,0,0.05), rgba(0,0,0,0)),			url('images/bg01.webp');
 		background-position:	top left,														top left;
 		background-repeat:		repeat-x,														repeat;
 		background-size:		100% 30em,														auto;

@@ -21,7 +21,7 @@
 			background:	url('../images/bgtr.svg') top right no-repeat,
 						url('../images/bgbl.svg') bottom left no-repeat,
 						url('../images/bgbl.svg') bottom left no-repeat,
-						url('../images/overlay.png'),
+						url('../images/overlay.webp'),
 						url('images/content-style1.svg');
 		}
 
@@ -30,7 +30,7 @@
 			background:	url('../images/bgtr.svg') top right no-repeat,
 						url('../images/bgbl.svg') bottom left no-repeat,
 						url('../images/bgbl.svg') bottom left no-repeat,
-						url('../images/overlay.png'),
+						url('../images/overlay.webp'),
 						url('images/content-style2.svg');
 		}
 
@@ -39,6 +39,6 @@
 			background:	url('../images/bgtr.svg') top right no-repeat,
 						url('../images/bgbl.svg') bottom left no-repeat,
 						url('../images/bgbl.svg') bottom left no-repeat,
-						url('../images/overlay.png'),
+						url('../images/overlay.webp'),
 						url('images/content-style3.svg');
 		}
