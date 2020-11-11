@@ -134,6 +134,10 @@
     {
       "message": "Your custom theme will be applied at this point! Have fun creating new themes!",
       "imageUrl": "tutorials/en/customtheme/6.png"
+    },
+    {
+      "message": "For a video tutorial, please see the following YouTube video: https://youtu.be/09d8SvaCs_0",
+      "imageUrl": "tutorials/en/customtheme/6.png"
     }
   ]
 }
