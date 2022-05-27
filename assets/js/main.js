@@ -6,6 +6,10 @@
 
 (function($) {
 
+	var BP_MD_OR_LESS = 'xxs xs sm md';
+	var BP_LG_OR_MORE = 'lg xl xxl';
+	var BP_ENTER = 'enter';
+
 	var $window = $(window),
 		$body = $('body'),
 		$header = $('#header'),
@@ -21,13 +25,27 @@
 
 		};
 
-	// Breakpoints.
-		breakpoints({
-			xlarge:  [ '1281px',  '1800px' ],
-			large:   [ '981px',   '1280px' ],
-			medium:  [ '737px',   '980px'  ],
-			small:   [ '481px',   '736px'  ],
-			xsmall:  [ null,      '480px'  ],
+		Breakpoints({
+		    xs: {
+		        min: 0,
+		        max: 480
+		    },
+		    sm: {
+		        min: 481,
+		        max: 736
+		    },
+		    md: {
+		        min: 737,
+		        max: 980,
+		    },
+		    lg: {
+		        min: 981,
+		        max: 1280
+		    },
+		    xl: {
+		    	min: 1281,
+		    	max: Infinity
+		    }
 		});
 
 	// Play initial animations on page load.
@@ -51,7 +69,7 @@
 		}
 
 	// Footer.
-		breakpoints.on('<=medium', function() {
+		Breakpoints.on(BP_MD_OR_LESS, BP_ENTER, function() {
 			$footer.insertAfter($main);
             if (!$('#header').css("background-image").includes("webp")) {
                 var bgArray = ["bg.webp", "bg2.webp", "bg3.webp", "bg4.webp"];
@@ -60,7 +78,7 @@
             }
 		});
 
-		breakpoints.on('>medium', function() {
+		Breakpoints.on(BP_LG_OR_MORE, BP_ENTER, function() {
 			$footer.appendTo($header);
 
             if (!$('#header').css("background-image").includes("webp")) {
@@ -82,14 +100,14 @@
 
 			if (settings.parallax) {
 
-				breakpoints.on('<=medium', function() {
+				Breakpoints.on(BP_MD_OR_LESS, BP_ENTER, function() {
 
 					$window.off('scroll.strata_parallax');
 					$header.css('background-position', '');
 
 				});
 
-				breakpoints.on('>medium', function() {
+				Breakpoints.on(BP_LG_OR_MORE, BP_ENTER, function() {
 
 					$header.css('background-position', 'left 0px');
 
