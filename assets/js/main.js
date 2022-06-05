@@ -1,125 +1,94 @@
-/*
-	Strata by Pixelarity
-	pixelarity.com | hello@pixelarity.com
-	License: pixelarity.com/license
-*/
+const BP_MD_OR_LESS = 'xxs xs sm md';
+const BP_LG_OR_MORE = 'lg xl xxl';
+const BP_ENTER = 'enter';
 
-(function($) {
+function windowScrollToTop() {
+	return (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
+}
 
-	var BP_MD_OR_LESS = 'xxs xs sm md';
-	var BP_LG_OR_MORE = 'lg xl xxl';
-	var BP_ENTER = 'enter';
+function bgImageIsWebp() {
+	var headerElement = document.querySelector('#header');
+	var view = headerElement.ownerDocument.defaultView;
+	return view.getComputedStyle(headerElement, null).backgroundImage.includes("webp");
+}
 
-	var $window = $(window),
-		$body = $('body'),
-		$header = $('#header'),
-		$footer = $('#footer'),
-		$main = $('#main'),
-		settings = {
+var header = document.querySelector('#header');
+var footer = document.querySelector('#footer');
+var main = document.querySelector('#main');
+var parallaxSettings = {
+	enabled: browser.name != 'ie' && !browser.mobile,
+	parallaxFactor: 20 //highter is more intense parallax
+};
 
-			// Parallax background effect?
-				parallax: true,
+Breakpoints({
+	xs: {
+		min: 0,
+		max: 480
+	},
+	sm: {
+		min: 481,
+		max: 736
+	},
+	md: {
+		min: 737,
+		max: 980,
+	},
+	lg: {
+		min: 981,
+		max: 1280
+	},
+	xl: {
+		min: 1281,
+		max: Infinity
+	}
+});
 
-			// Parallax factor (lower = more intense, higher = less intense).
-				parallaxFactor: 20
+if (browser.mobile) {
+	document.body.addClass('is-touch');
+}
 
-		};
+// Footer.
+Breakpoints.on(BP_MD_OR_LESS, BP_ENTER, function() {
+	if (main.parentNode) {
+		main.parentNode.insertBefore(footer, main.nextSibling);
+	}
+	if (!bgImageIsWebp()) {
+		var bgArray = ["bg.webp", "bg2.webp", "bg3.webp", "bg4.webp"];
+		var bg = bgArray[Math.floor(Math.random() * bgArray.length)];
+		header.style.backgroundImage = "url('images/overlay.webp'), url('images/" + bg + "')";
+		footer.style.backgroundImage = "url('images/overlay.webp'), url('images/" + bg + "')";
+	}
+});
 
-		Breakpoints({
-		    xs: {
-		        min: 0,
-		        max: 480
-		    },
-		    sm: {
-		        min: 481,
-		        max: 736
-		    },
-		    md: {
-		        min: 737,
-		        max: 980,
-		    },
-		    lg: {
-		        min: 981,
-		        max: 1280
-		    },
-		    xl: {
-		    	min: 1281,
-		    	max: Infinity
-		    }
-		});
+Breakpoints.on(BP_LG_OR_MORE, BP_ENTER, function() {
+	header.appendChild(footer);
+	if (!bgImageIsWebp()) {
+		var bgArray = ["bg.webp", "bg2.webp", "bg3.webp", "bg4.webp"];
+		var bg = bgArray[Math.floor(Math.random() * bgArray.length)];
+		header.style.backgroundImage = "url('images/overlay.webp'), url('images/" + bg + "')";
+	}
+	footer.style.backgroundImage = "none";
+});
 
-	// Play initial animations on page load.
-		$window.on('load', function() {
-			window.setTimeout(function() {
-				$body.removeClass('is-preload');
-			}, 100);
-		});
+// Header.
 
-	// Touch?
-		if (browser.mobile) {
+// Parallax background.
 
-			// Turn on touch mode.
-				$body.addClass('is-touch');
+if (parallaxSettings.enabled) {
 
-			// Height fix (mostly for iOS).
-				window.setTimeout(function() {
-					$window.scrollTop($window.scrollTop() + 1);
-				}, 0);
+	function updateParallaxPosition() {
+		header.style.backgroundPosition = 'left ' + (-1 * (parseInt(windowScrollToTop()) / parallaxSettings.parallaxFactor)) + 'px';
+	}
 
-		}
+	Breakpoints.on(BP_MD_OR_LESS, BP_ENTER, function() {
+		window.removeEventListener('scroll', updateParallaxPosition);
+		header.style.backgroundPosition = '';
 
-	// Footer.
-		Breakpoints.on(BP_MD_OR_LESS, BP_ENTER, function() {
-			$footer.insertAfter($main);
-            if (!$('#header').css("background-image").includes("webp")) {
-                var bgArray = ["bg.webp", "bg2.webp", "bg3.webp", "bg4.webp"];
-                var bg = bgArray[Math.floor(Math.random() * bgArray.length)];
-                $('#header, #footer').css("background-image", "url('images/overlay.webp'), url('images/" + bg + "')")
-            }
-		});
+	});
 
-		Breakpoints.on(BP_LG_OR_MORE, BP_ENTER, function() {
-			$footer.appendTo($header);
+	Breakpoints.on(BP_LG_OR_MORE, BP_ENTER, function() {
+		header.style.backgroundPosition = 'left 0px';
+		window.addEventListener('scroll', updateParallaxPosition);
+	});
 
-            if (!$('#header').css("background-image").includes("webp")) {
-                var bgArray = ["bg.webp", "bg2.webp", "bg3.webp", "bg4.webp"];
-                var bg = bgArray[Math.floor(Math.random() * bgArray.length)];
-                $('#header').css("background-image", "url('images/overlay.webp'), url('images/" + bg + "')")
-            }
-            $("#footer").css("background-image", "none");
-		});
-
-	// Header.
-
-		// Parallax background.
-
-			// Disable parallax on IE (smooth scrolling is jerky), and on mobile platforms (= better performance).
-				if (browser.name == 'ie'
-				||	browser.mobile)
-					settings.parallax = false;
-
-			if (settings.parallax) {
-
-				Breakpoints.on(BP_MD_OR_LESS, BP_ENTER, function() {
-
-					$window.off('scroll.strata_parallax');
-					$header.css('background-position', '');
-
-				});
-
-				Breakpoints.on(BP_LG_OR_MORE, BP_ENTER, function() {
-
-					$header.css('background-position', 'left 0px');
-
-					$window.on('scroll.strata_parallax', function() {
-						$header.css('background-position', 'left ' + (-1 * (parseInt($window.scrollTop()) / settings.parallaxFactor)) + 'px');
-					});
-
-				});
-
-				$window.on('load', function() {
-					$window.triggerHandler('scroll');
-				});
-
-			}
-})(jQuery);
+}
