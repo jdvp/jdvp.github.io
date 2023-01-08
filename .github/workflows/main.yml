@@ -1,0 +1,21 @@
+name: Build and deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+  schedule:
+    # Runs once a year to rebuild 
+    - cron: '0 0 1 1 *'
+
+jobs:
+  # Take built site and minify it
+  minification:
+      runs-on: ubuntu-latest
+      steps:
+      - uses: actions/checkout@v2
+      - uses: DrA1ex/pages-minify@v1.0.3
+      - uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: "Github Action: Auto Minified files"
+          branch: 'gh-pages'
