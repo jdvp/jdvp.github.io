@@ -9,13 +9,26 @@ on:
     - cron: '0 0 1 1 *'
 
 jobs:
+  # Checkout and build Jekyll site
+  github-pages:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: helaili/jekyll-action@v2
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          target_branch: 'gh-pages'
+          
   # Take built site and minify it
   minification:
+      needs: github-pages
       runs-on: ubuntu-latest
       steps:
       - uses: actions/checkout@v2
+        with:
+          ref: 'gh-pages'
       - uses: DrA1ex/pages-minify@v1.0.3
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          commit_message: "Github Action: Auto Minified files"
+          commit_message: "Github Action: Auto Minified JS and CSS files"
           branch: 'gh-pages'
