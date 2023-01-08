@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400italic");
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400italic&display=swap");
 .contact-icon {
 	background-size: 1.5em 1.5em;
 	border: none;
@@ -38,7 +38,6 @@ html, body, div, span, applet, object,iframe, h1, h2, h3, h4, h5, h6, p, blockqu
 	padding: 0;
 	border: 0;
 	font-size: 100%;
-	font: inherit;
 	vertical-align: baseline;
 }
 article, aside, details, figcaption, figure,footer, header, hgroup, menu, nav, section {
@@ -244,7 +243,6 @@ header.major h2 {
 	-webkit-transition: opacity 0.2s ease-in-out;
 	-ms-transition: opacity 0.2s ease-in-out;
 	transition: opacity 0.2s ease-in-out;
-	background: url("../../images/overlay.webp");
 	border-radius: 0.35em;
 	content: '';
 	display: block;
@@ -279,10 +277,6 @@ header.major h2 {
 	white-space: nowrap;
 }
 .project-item-image:hover:after {
-	opacity: 1.0;
-}
-.project-item-image:hover:before {
-	background: url("../../images/overlay.webp"), url("../../images/overlay.webp");
 	opacity: 1.0;
 }
 .project-item-image {
