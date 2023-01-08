@@ -17,6 +17,8 @@ jobs:
       - uses: JamesIves/github-pages-deploy-action@v4
         with:
             folder: .
+            commit-message: "Github Action: Copied files from main to github-pages"
+            single-commit: true
           
   # Take built site and minify it
   minification:
