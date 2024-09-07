@@ -13,7 +13,7 @@ jobs:
   github-pages:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - uses: JamesIves/github-pages-deploy-action@v4
         with:
             folder: .
@@ -25,11 +25,11 @@ jobs:
       needs: github-pages
       runs-on: ubuntu-latest
       steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           ref: 'gh-pages'
       - uses: DrA1ex/pages-minify@v1.0.3
-      - uses: stefanzweifel/git-auto-commit-action@v4
+      - uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "Github Action: Auto Minified JS and CSS files"
           branch: 'gh-pages'
