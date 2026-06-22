@@ -13,7 +13,7 @@ jobs:
   github-pages:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
       - uses: JamesIves/github-pages-deploy-action@v4
         with:
             folder: .
@@ -25,7 +25,7 @@ jobs:
       needs: github-pages
       runs-on: ubuntu-latest
       steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
         with:
           ref: 'gh-pages'
       - uses: DrA1ex/pages-minify@v1.0.3
