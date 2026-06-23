@@ -1,0 +1,11 @@
+# Disallow ChatGPT from scraping the site
+User-agent: GPTBot
+Disallow: /
+
+# 80legs - Found in reddit robots. Is a web scraping comapny
+User-agent: 008
+Disallow: /
+
+# 80legs' new crawler
+User-agent: voltron
+Disallow: /
